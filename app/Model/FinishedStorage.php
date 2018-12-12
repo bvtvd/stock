@@ -10,7 +10,7 @@ class FinishedStorage extends Model
     protected $table = 'finished_storage';
 
     // storage_type  '1=生产入库 2=调拨入库 3=退货入库'
-    protected $fillable = ['product_id' ,'address' ,'price' ,'quantity' ,'storage_money' , 'metering_unit','remarks' , 'appendix' ,'created_user' ,'storage_time','storage_type','appendix_name','contract_number','category_id','outgoing_product'];
+    protected $guarded = [];
 
     protected $appends = ['storage_type_zh'];
 

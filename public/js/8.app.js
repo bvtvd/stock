@@ -401,6 +401,19 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     data: function data() {
@@ -457,6 +470,8 @@ exports.default = {
         },
         formatTime: function formatTime(val) {
             this.formData.storage_time = val;
+            console.log(this.formData.storage_time);
+            console.log(this.formData);
         },
         getData: function getData() {
             var filters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -907,7 +922,20 @@ var render = function() {
               label: "产品名称",
               align: "center",
               width: "400"
-            }
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return _vm._l(scope.row.out, function(item) {
+                    return _c("span", [
+                      _vm._v(_vm._s(item.product.name)),
+                      _c("br")
+                    ])
+                  })
+                }
+              }
+            ])
           }),
           _vm._v(" "),
           _c("el-table-column", {
@@ -921,12 +949,12 @@ var render = function() {
               {
                 key: "default",
                 fn: function(scope) {
-                  return [
-                    _c("span", [
-                      _vm._v(_vm._s(_vm.fmoney(scope.row.price, 2))),
+                  return _vm._l(scope.row.out, function(item) {
+                    return _c("span", [
+                      _vm._v(_vm._s(_vm.fmoney(item.product_price, 2))),
                       _c("br")
                     ])
-                  ]
+                  })
                 }
               }
             ])
@@ -943,18 +971,17 @@ var render = function() {
               {
                 key: "default",
                 fn: function(scope) {
-                  return [
-                    _c(
-                      "span",
-                      {
-                        style:
-                          scope.row.storage_type == 3
-                            ? "color:red"
-                            : "color:green"
-                      },
-                      [_vm._v(_vm._s(scope.row.quantity))]
-                    )
-                  ]
+                  return _vm._l(scope.row.out, function(item) {
+                    return scope.row.storage_type == 3
+                      ? _c(
+                          "span",
+                          { staticStyle: { color: "red", display: "block" } },
+                          [_vm._v(_vm._s(item.outgoing_quantity))]
+                        )
+                      : _c("span", { staticStyle: { color: "green" } }, [
+                          _vm._v(_vm._s(scope.row.quantity))
+                        ])
+                  })
                 }
               }
             ])
@@ -971,30 +998,20 @@ var render = function() {
               {
                 key: "default",
                 fn: function(scope) {
-                  return [
-                    _c(
-                      "span",
-                      {
-                        style:
-                          scope.row.storage_type == 3
-                            ? "color:red"
-                            : "color:green"
-                      },
-                      [_vm._v(_vm._s(_vm.fmoney(scope.row.storage_money, 2)))]
-                    )
-                  ]
+                  return _vm._l(scope.row.out, function(item) {
+                    return scope.row.storage_type == 3
+                      ? _c(
+                          "span",
+                          { staticStyle: { color: "red", display: "block" } },
+                          [_vm._v(_vm._s(_vm.fmoney(item.storage_money, 2)))]
+                        )
+                      : _c("span", { staticStyle: { color: "green" } }, [
+                          _vm._v(_vm._s(_vm.fmoney(scope.row.storage_money, 2)))
+                        ])
+                  })
                 }
               }
             ])
-          }),
-          _vm._v(" "),
-          _c("el-table-column", {
-            attrs: {
-              prop: "remarks",
-              label: "备注",
-              align: "center",
-              width: "200"
-            }
           }),
           _vm._v(" "),
           _c("el-table-column", {
@@ -1003,7 +1020,23 @@ var render = function() {
               label: "计量单位",
               align: "center",
               width: "100"
-            }
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return _vm._l(scope.row.out, function(item) {
+                    return scope.row.storage_type == 3
+                      ? _c("span", { staticStyle: { display: "block" } }, [
+                          _vm._v(_vm._s(item.product.metering_unit))
+                        ])
+                      : _c("span", { staticStyle: { color: "green" } }, [
+                          _vm._v(_vm._s(scope.row.product.metering_unit))
+                        ])
+                  })
+                }
+              }
+            ])
           }),
           _vm._v(" "),
           _c("el-table-column", {
@@ -1012,6 +1045,15 @@ var render = function() {
               label: "入库类型",
               align: "center",
               width: "120"
+            }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "remarks",
+              label: "备注",
+              align: "center",
+              width: "200"
             }
           }),
           _vm._v(" "),
@@ -1358,45 +1400,6 @@ var render = function() {
                                       },
                                       expression:
                                         "formData.product[scope.$index].address"
-                                    }
-                                  })
-                                ]
-                              }
-                            }
-                          ])
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            prop: "product_price",
-                            label: "备注",
-                            align: "center"
-                          },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "default",
-                              fn: function(scope) {
-                                return [
-                                  _c("el-input", {
-                                    attrs: { "auto-complete": "off" },
-                                    on: {
-                                      change: function(value) {
-                                        _vm.tmd2(value, scope.row, scope.$index)
-                                      }
-                                    },
-                                    model: {
-                                      value:
-                                        _vm.formData.product[scope.$index]
-                                          .remarks,
-                                      callback: function($$v) {
-                                        _vm.$set(
-                                          _vm.formData.product[scope.$index],
-                                          "remarks",
-                                          $$v
-                                        )
-                                      },
-                                      expression:
-                                        "formData.product[scope.$index].remarks"
                                     }
                                   })
                                 ]

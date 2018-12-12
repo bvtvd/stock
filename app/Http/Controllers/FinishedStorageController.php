@@ -22,7 +22,7 @@ class FinishedStorageController extends Controller
     public function index()
     {
         //
-        $list = FinishedStorage::where('category_id',request()->get('category_id'))->with(['product.category','user'])->orderByDesc('storage_time')->paginate($this->per_page)->toArray();
+        $list = FinishedStorage::where('category_id',request()->get('category_id'))->with(['product.category','user', 'out.product'])->orderByDesc('storage_time')->paginate($this->per_page)->toArray();
         return success($list);
     }
 
@@ -52,10 +52,22 @@ class FinishedStorageController extends Controller
 
 
                 if(key_exists('storage_type',$data) && $data['storage_type'] == 3){
+                    // 退货入库
                     $request->offsetSet('outgoing_type',4);
                     $out_data = [];
                     $out = null;
                     $out_money = 0;
+
+                    $storage = FinishedStorage::create([
+                        'quantity' => collect($data['product'])->sum('return_quantity'),
+                        'created_user' => Auth::user()->id,
+                        'storage_time' => Carbon::create(),
+                        'remarks' => "{$data['contract_number']}(退)",
+                        'storage_type' => 3,
+                        'category_id' => $data['category_id'],
+                        'contract_number' => $data['contract_number'],
+                    ]);
+
                     foreach ($data['product'] as $item){
 
                         if(key_exists('return_quantity',$item) && key_exists('address',$item) && $item['return_quantity']){
@@ -91,13 +103,13 @@ class FinishedStorageController extends Controller
                                 $out->save();
                                 $outgoing->save();
 
-
-                                $storage = FinishedStorage::create($data);
                                 $out_data[] = new OutgoingProduct([
                                     'product_price' => $data['price'],
                                     'outgoing_quantity' => -$data['quantity'],
                                     'product_id' => $data['product_id'],
-                                    'storage_id' => $storage->id
+                                    'storage_id' => $storage->id,
+                                    'address' => $item['address'],
+                                    'storage_money' => $data['storage_money']
                                 ]) ;
                             }else{
                                 throw new \ErrorException('退货数量与退货地址不能为空');

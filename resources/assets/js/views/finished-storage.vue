@@ -77,6 +77,9 @@
                     align="center"
                     width="400"
             >
+                <template slot-scope="scope">
+                    <span v-for="(item) in scope.row.out">{{item.product.name}}<br></span>
+                </template>
             </el-table-column>
 
             <el-table-column
@@ -86,8 +89,11 @@
                     width="120"
             >
                 <template slot-scope="scope">
-                    <span >{{fmoney(scope.row.price,2)}}<br></span>
+                    <span v-for="(item) in scope.row.out">{{fmoney(item.product_price,2)}}<br></span>
                 </template>
+                <!--<template slot-scope="scope">-->
+                    <!--<span >{{fmoney(scope.row.price,2)}}<br></span>-->
+                <!--</template>-->
             </el-table-column>
             <el-table-column
                     prop="quantity"
@@ -96,7 +102,8 @@
                     width="120"
             >
                 <template slot-scope="scope">
-                    <span :style="scope.row.storage_type == 3 ? 'color:red' : 'color:green'">{{ scope.row.quantity }}</span>
+                    <span style="color:red;display: block" v-if="scope.row.storage_type == 3" v-for="(item) in scope.row.out">{{ item.outgoing_quantity }}</span>
+                    <span v-else style="color:green">{{ scope.row.quantity }}</span>
                 </template>
             </el-table-column>
             <el-table-column
@@ -106,22 +113,23 @@
                     width="120"
             >
                 <template slot-scope="scope">
-                    <span :style="scope.row.storage_type == 3 ? 'color:red' : 'color:green'">{{ fmoney(scope.row.storage_money,2) }}</span>
+                    <span style="color:red;display: block" v-if="scope.row.storage_type == 3" v-for="(item) in scope.row.out">{{ fmoney(item.storage_money,2) }}</span>
+                    <span v-else style="color:green">{{ fmoney(scope.row.storage_money,2) }}</span>
+                    <!--<span :style="scope.row.storage_type == 3 ? 'color:red' : 'color:green'">{{ fmoney(scope.row.storage_money,2) }}</span>-->
                 </template>
             </el-table-column>
-            <el-table-column
-                    prop="remarks"
-                    label="备注"
-                    align="center"
-                    width="200"
-            >
-            </el-table-column>
+
             <el-table-column
                     prop="product.metering_unit"
                     label="计量单位"
                     align="center"
                     width="100"
             >
+                <template slot-scope="scope">
+                    <span style="display: block" v-if="scope.row.storage_type == 3" v-for="(item) in scope.row.out">{{ item.product.metering_unit }}</span>
+                    <span v-else style="color:green">{{ scope.row.product.metering_unit }}</span>
+                    <!--<span :style="scope.row.storage_type == 3 ? 'color:red' : 'color:green'">{{ fmoney(scope.row.storage_money,2) }}</span>-->
+                </template>
             </el-table-column>
             <el-table-column
                     prop="storage_type_zh"
@@ -130,7 +138,12 @@
                     width="120"
             >
             </el-table-column>
-
+            <el-table-column
+                    prop="remarks"
+                    label="备注"
+                    align="center"
+                    width="200"
+            ></el-table-column>
             <el-table-column label="操作" align="center" width="200">
                 <template slot-scope="scope">
                     <el-button v-if="scope.row.storage_type != 3"
@@ -232,14 +245,14 @@
                                     <el-input  v-model="formData.product[scope.$index].address" @change="(value) => { tmd1(value,scope.row,scope.$index)}"  auto-complete="off"></el-input>
                                 </template>
                             </el-table-column>
-                            <el-table-column
-                                    prop="product_price"
-                                    label="备注"
-                                    align="center">
-                                <template slot-scope="scope">
-                                    <el-input  v-model="formData.product[scope.$index].remarks" @change="(value) => { tmd2(value,scope.row,scope.$index)}"  auto-complete="off"></el-input>
-                                </template>
-                            </el-table-column>
+                            <!--<el-table-column-->
+                                    <!--prop="product_price"-->
+                                    <!--label="备注"-->
+                                    <!--align="center">-->
+                                <!--<template slot-scope="scope">-->
+                                    <!--<el-input  v-model="formData.product[scope.$index].remarks" @change="(value) => { tmd2(value,scope.row,scope.$index)}"  auto-complete="off"></el-input>-->
+                                <!--</template>-->
+                            <!--</el-table-column>-->
                         </el-table>
                     </template>
                 </el-form-item>
@@ -359,6 +372,8 @@
             },
             formatTime(val){
                 this.formData.storage_time = val;
+                console.log(this.formData.storage_time)
+                console.log(this.formData)
             },
             getData(filters = {}){//获取数据
                 let self = this;

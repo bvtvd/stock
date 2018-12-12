@@ -11,7 +11,7 @@ class OutgoingProduct extends Model
 
     protected $table = 'outgoing_product';
 
-    protected $fillable = ['outgoing_quantity','product_price','product_id','outgoing_id','return_quantity','storage_id'];
+    protected $guarded = [];
 
     public function product()
     {
@@ -27,5 +27,10 @@ class OutgoingProduct extends Model
     public function out()
     {
         return $this->hasOne(FinishedOutgoing::class,'id','outgoing_id');
+    }
+
+    public function getStorageMoneyAttribute($value)
+    {
+        return $value ?: bcmul($this->product_price, abs($this->outgoing_quantity), 2);
     }
 }

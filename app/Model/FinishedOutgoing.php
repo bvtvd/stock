@@ -66,4 +66,6 @@ class FinishedOutgoing extends Model
     {
         return $start && $end ? $query->whereBetween('created_at',[$start,$end]) : $query;
     }
+
+
 }
