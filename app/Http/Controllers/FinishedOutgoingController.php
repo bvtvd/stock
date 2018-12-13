@@ -258,7 +258,7 @@ class FinishedOutgoingController extends Controller
         try{
             DB::transaction(function() use ($data,$outgoing){
 
-                if($data['received_money_new'] ){
+                if(array_has($data, 'received_money_new')){
                     $finance = Finance::orderByDesc('id')->first();
                     if(!$finance){
                         $balance = 0;
@@ -288,10 +288,10 @@ class FinishedOutgoingController extends Controller
                         ]);
                     }
 
-
+                    $outgoing->received_money = bcadd($outgoing->received_money,$data['received_money_new'],2);
                 }
 
-                $outgoing->received_money = bcadd($outgoing->received_money,$data['received_money_new'],2);
+
                 if(key_exists('received_time',$data)){
                     $outgoing->received_time = $data['received_time'];
                 }else{
