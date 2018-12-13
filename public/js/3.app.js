@@ -658,10 +658,9 @@ exports.default = {
             }
         },
         getData: function getData() {
-            var filters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
             //获取数据
             var self = this;
-            var parm = Object.assign(filters, self.pageData);
+            var parm = Object.assign(this.filters, self.pageData);
             parm.category_id = 1;
             parm.settlement = 1;
             self.$axios.get(self.currentUrl, { params: parm }).then(function (res) {
@@ -798,7 +797,7 @@ exports.default = {
         },
         filterData: function filterData() {
             //搜索
-            this.getData(this.filters);
+            this.getData();
         },
         handleSizeChange: function handleSizeChange(val) {
             //改变每页条数

@@ -144,7 +144,8 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return success();
     }
 
     public function role()

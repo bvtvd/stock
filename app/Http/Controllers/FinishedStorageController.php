@@ -293,4 +293,16 @@ class FinishedStorageController extends Controller
         }
 
     }
+
+    // 更新库存时间
+    public function updateStorageTime(Request $request)
+    {
+        $storage = FinishedStorage::findOrFail($request->input('id'));
+
+        $storage->update([
+            'storage_time' => $request->input('storage_time')
+        ]);
+
+        return success();
+    }
 }

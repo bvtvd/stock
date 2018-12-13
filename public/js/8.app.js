@@ -529,6 +529,7 @@ exports.default = {
         },
         edit: function edit(index, row) {
             //显示编辑视图
+            console.log(row);
             var self = this;
             self.formData = Object.assign({}, row);
 
@@ -566,6 +567,31 @@ exports.default = {
                     return false;
                 }
             });
+        },
+        updateStorageTime: function updateStorageTime(formName) {
+            var self = this;
+            console.log(formName);
+            self.$refs[formName].validate(function (valid) {
+                if (valid) {
+                    self.$emit('showLoading');
+                    self.$axios.put(self.currentUrl + '/storage/time', { id: self.formData.id, storage_time: self.formData.storage_time }).then(function (res) {
+                        self.$emit('showLoading');
+
+                        if (res.data.code == 1000) {
+                            self.formData = {};
+                            self.dialogFormVisible = false;
+                            self.dialogMoneyVisible = false;
+                            self.$message.success('编辑成功');
+                            self.getData();
+                        } else {
+                            self.$message.error(res.data.msg);
+                        }
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+                }
+            });
+            //
         },
         destroy: function destroy(row) {
             //删除
@@ -1064,20 +1090,18 @@ var render = function() {
                 key: "default",
                 fn: function(scope) {
                   return [
-                    scope.row.storage_type != 3
-                      ? _c(
-                          "el-button",
-                          {
-                            attrs: { size: "small" },
-                            on: {
-                              click: function($event) {
-                                _vm.edit(scope.$index, scope.row)
-                              }
-                            }
-                          },
-                          [_vm._v("编辑")]
-                        )
-                      : _vm._e(),
+                    _c(
+                      "el-button",
+                      {
+                        attrs: { size: "small" },
+                        on: {
+                          click: function($event) {
+                            _vm.edit(scope.$index, scope.row)
+                          }
+                        }
+                      },
+                      [_vm._v("编辑")]
+                    ),
                     _vm._v(" "),
                     _c(
                       "el-button",
@@ -1656,9 +1680,7 @@ var render = function() {
                   attrs: { type: "primary" },
                   on: {
                     click: function($event) {
-                      _vm.methodType
-                        ? _vm.store("ruleForm")
-                        : _vm.update("ruleForm")
+                      _vm.updateStorageTime("ruleForm")
                     }
                   }
                 },

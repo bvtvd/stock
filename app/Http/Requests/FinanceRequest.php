@@ -29,7 +29,7 @@ class FinanceRequest extends FormRequest
             'money' => 'required',
             //'appendix' => 'required',
             //'appendix_name' => 'required',
-            'remarks' => 'required',
+//            'remarks' => 'required',
             'type' => 'required'
         ];
     }

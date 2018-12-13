@@ -61,6 +61,7 @@ class FinanceController extends Controller
                 $data['balance'] = bcsub($balance,$data['money'],2);
         }
         $data['created_at'] = Carbon::now();
+        !array_has($data, 'remarks') && $data['remarks'] = '无';
         return Finance::create($data) ? success() : fail();
     }
 

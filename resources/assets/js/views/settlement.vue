@@ -562,9 +562,9 @@
 
             },
 
-            getData(filters = {}){//获取数据
+            getData(){//获取数据
                 let self = this;
-                let parm = Object.assign(filters,self.pageData);
+                let parm = Object.assign(this.filters,self.pageData);
                 parm.category_id = 1;
                 parm.settlement = 1;
                 self.$axios.get(self.currentUrl,{params:parm})
@@ -709,7 +709,7 @@
 
             },
             filterData(){//搜索
-                this.getData(this.filters);
+                this.getData();
             },
             handleSizeChange(val) {//改变每页条数
                 this.pageData.per_page = val;

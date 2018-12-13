@@ -45,6 +45,7 @@ $router->group(['middleware' => 'auth:api'],function() use ($router){
     $router->resource('category','CategoryController');//分类
     $router->get('statistics','ProductController@stockStatistics');//库存统计
     $router->resource('product','ProductController');//产品
+    $router->put('finished/storage/time', 'FinishedStorageController@updateStorageTime');
     $router->resource('finished','FinishedStorageController');//入库
     $router->get('getMoney','FinishedOutgoingController@getMoney');//出库
     $router->put('updateReceived/{id}','FinishedOutgoingController@updateReceived');//出库

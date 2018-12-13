@@ -146,7 +146,7 @@
             ></el-table-column>
             <el-table-column label="操作" align="center" width="200">
                 <template slot-scope="scope">
-                    <el-button v-if="scope.row.storage_type != 3"
+                    <el-button
                             size="small"
                             @click="edit(scope.$index,scope.row)">编辑</el-button>
                     <el-button
@@ -301,7 +301,7 @@
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="dialogMoneyVisible = false">取 消</el-button>
-                <el-button type="primary" @click="methodType?store('ruleForm'):update('ruleForm')">确 定</el-button>
+                <el-button type="primary" @click="updateStorageTime('ruleForm')">确 定</el-button>
             </div>
         </el-dialog>
     </div>
@@ -431,6 +431,7 @@
                 });
             },
             edit(index,row){//显示编辑视图
+                console.log(row);
                 let self = this;
                 self.formData = Object.assign({},row);
 
@@ -471,6 +472,32 @@
                         return false;
                     }
                 });
+            },
+            updateStorageTime(formName){
+                let self = this;
+                console.log(formName)
+                self.$refs[formName].validate((valid) => {
+                    if(valid){
+                        self.$emit('showLoading');
+                        self.$axios.put(self.currentUrl + '/storage/time', {id: self.formData.id, storage_time: self.formData.storage_time})
+                            .then( res => {
+                                self.$emit('showLoading');
+
+                                if(res.data.code == 1000){
+                                    self.formData = {};
+                                    self.dialogFormVisible = false;
+                                    self.dialogMoneyVisible = false;
+                                    self.$message.success('编辑成功');
+                                    self.getData();
+                                }else{
+                                    self.$message.error(res.data.msg);
+                                }
+                        }).catch( error => {
+                            console.log(error)
+                        })
+                    }
+                })
+                //
             },
             destroy(row){//删除
                 let self = this;
