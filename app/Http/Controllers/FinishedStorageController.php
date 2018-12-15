@@ -53,6 +53,11 @@ class FinishedStorageController extends Controller
 
                 if(key_exists('storage_type',$data) && $data['storage_type'] == 3){
                     // 退货入库
+                    /**
+                     * 1. 创建入库记录( 入库类型为退货入库 storage_type=3)
+                     * 2. 根据 每种出库商品的 id 找到出库商品记录 (OutgoingProduct) 添加相应的退货数量 (return quantity)
+                     * 3.
+                     */
                     $request->offsetSet('outgoing_type',4);
                     $out_data = [];
                     $out = null;
