@@ -553,6 +553,13 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     data: function data() {
@@ -1063,16 +1070,28 @@ var render = function() {
                 "el-form-item",
                 { attrs: { label: "商家名称" } },
                 [
-                  _c("el-input", {
-                    attrs: { "auto-complete": "off" },
-                    model: {
-                      value: _vm.filters.business_name,
-                      callback: function($$v) {
-                        _vm.$set(_vm.filters, "business_name", $$v)
-                      },
-                      expression: "filters.business_name"
-                    }
-                  })
+                  _c(
+                    "el-select",
+                    {
+                      attrs: { "auto-complete": "off", filterable: "" },
+                      model: {
+                        value: _vm.filters.business_name,
+                        callback: function($$v) {
+                          _vm.$set(_vm.filters, "business_name", $$v)
+                        },
+                        expression: "filters.business_name"
+                      }
+                    },
+                    _vm._l(_vm.business, function(item) {
+                      return _c("el-option", {
+                        key: item.business_name,
+                        attrs: {
+                          label: item.business_name,
+                          value: item.business_name
+                        }
+                      })
+                    })
+                  )
                 ],
                 1
               ),

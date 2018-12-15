@@ -12,7 +12,14 @@
                     <el-input  v-model="filters.contract" auto-complete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="商家名称">
-                    <el-input  v-model="filters.business_name" auto-complete="off"></el-input>
+                    <el-select  v-model="filters.business_name" auto-complete="off" filterable>
+                        <el-option
+                                v-for="item in business"
+                                :key="item.business_name"
+                                :label="item.business_name"
+                                :value="item.business_name">
+                        </el-option>
+                    </el-select>
                 </el-form-item>
                 <el-form-item label="备注信息">
                     <el-input  v-model="filters.remarks" auto-complete="off"></el-input>
