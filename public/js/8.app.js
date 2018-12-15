@@ -495,7 +495,7 @@ exports.default = {
             //显示添加页面
             var self = this;
             self.formData = {};
-
+            self.outgoingProductTable = [];
             self.methodType = 1; //设置请求方法为添加
             self.dialogTitle = '新增入库信息';
 
@@ -538,10 +538,35 @@ exports.default = {
 
             self.methodType = 0; //设置请求方法为修改
             self.dialogFormVisible = true;
+
+            console.log(this.outgoingProductTable);
+            if (3 == self.formData.storage_type) {
+                // 编辑退货入库的操作
+                this.changeType();
+                this.getOutgoingProducts(self.formData.contract_number).then(function (res) {
+
+                    //查询出之前的出库商品
+                    if (self.formData.product) {
+                        self.formData.out.map(function (item) {
+
+                            self.formData.product.filter(function (e) {
+                                if (e.outgoing_product == item.minus_from) {
+                                    e.return_quantity = Math.abs(item.outgoing_quantity);
+                                    e.address = item.address;
+                                    e.id = item.id;
+                                }
+                            });
+                        });
+                    }
+                });
+            }
         },
         update: function update(formName) {
             //更新数据
             var self = this;
+
+            console.log(this.formData);
+
             self.$refs[formName].validate(function (valid) {
                 if (valid) {
                     self.$emit('showLoading');
@@ -666,17 +691,6 @@ exports.default = {
             if (self.formData.storage_type == 3) {
                 self.showContract = 'display:block;';
                 self.showProduct = false;
-                self.outgoingProductTable = self.outgoingProduct;
-                self.formData.product = [];
-                self.outgoingProductTable && self.outgoingProductTable.forEach(function (val) {
-                    self.formData.product.push({
-                        outgoing_product: val.id,
-                        return_quantity: '',
-                        address: '',
-                        remarks: '',
-                        product_id: val.product_id
-                    });
-                });
             } else {
                 self.showContract = 'display:none;';
                 self.showProduct = true;
@@ -685,10 +699,21 @@ exports.default = {
         getOutgoingProducts: function getOutgoingProducts(val) {
             //获取合同编号下的商品
             var self = this;
-            self.$axios.get(self.$adminPath + 'outgoing', { params: { contract_number: val } }).then(function (res) {
+            return self.$axios.get(self.$adminPath + 'outgoing', { params: { contract_number: val } }).then(function (res) {
                 if (res.data.code == 1000) {
                     self.products = res.data.data.product;
                     self.outgoingProduct = res.data.data.product;
+                    self.outgoingProductTable = self.outgoingProduct;
+                    self.formData.product = [];
+                    self.outgoingProductTable && self.outgoingProductTable.forEach(function (val) {
+                        self.formData.product.push({
+                            outgoing_product: val.id,
+                            return_quantity: '',
+                            address: '',
+                            remarks: '',
+                            product_id: val.product_id
+                        });
+                    });
                 } else {
                     self.$message.error('该合同号不存在');
                 }
@@ -1185,9 +1210,11 @@ var render = function() {
                   _c(
                     "el-select",
                     {
-                      attrs: {
-                        change: _vm.changeType(),
-                        placeholder: "请选择入库类型"
+                      attrs: { placeholder: "请选择入库类型" },
+                      on: {
+                        change: function($event) {
+                          _vm.changeType()
+                        }
                       },
                       model: {
                         value: _vm.formData.storage_type,
@@ -1365,28 +1392,36 @@ var render = function() {
                               key: "default",
                               fn: function(scope) {
                                 return [
-                                  _c("el-input", {
-                                    attrs: { "auto-complete": "off" },
-                                    on: {
-                                      change: function(value) {
-                                        _vm.tmd(value, scope.row, scope.$index)
-                                      }
-                                    },
-                                    model: {
-                                      value:
-                                        _vm.formData.product[scope.$index]
-                                          .return_quantity,
-                                      callback: function($$v) {
-                                        _vm.$set(
-                                          _vm.formData.product[scope.$index],
-                                          "return_quantity",
-                                          $$v
-                                        )
-                                      },
-                                      expression:
-                                        "formData.product[scope.$index].return_quantity"
-                                    }
-                                  })
+                                  _vm.formData.product
+                                    ? _c("el-input", {
+                                        attrs: { "auto-complete": "off" },
+                                        on: {
+                                          change: function(value) {
+                                            _vm.tmd(
+                                              value,
+                                              scope.row,
+                                              scope.$index
+                                            )
+                                          }
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.formData.product[scope.$index]
+                                              .return_quantity,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.formData.product[
+                                                scope.$index
+                                              ],
+                                              "return_quantity",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "formData.product[scope.$index].return_quantity"
+                                        }
+                                      })
+                                    : _vm._e()
                                 ]
                               }
                             }
@@ -1404,28 +1439,36 @@ var render = function() {
                               key: "default",
                               fn: function(scope) {
                                 return [
-                                  _c("el-input", {
-                                    attrs: { "auto-complete": "off" },
-                                    on: {
-                                      change: function(value) {
-                                        _vm.tmd1(value, scope.row, scope.$index)
-                                      }
-                                    },
-                                    model: {
-                                      value:
-                                        _vm.formData.product[scope.$index]
-                                          .address,
-                                      callback: function($$v) {
-                                        _vm.$set(
-                                          _vm.formData.product[scope.$index],
-                                          "address",
-                                          $$v
-                                        )
-                                      },
-                                      expression:
-                                        "formData.product[scope.$index].address"
-                                    }
-                                  })
+                                  _vm.formData.product
+                                    ? _c("el-input", {
+                                        attrs: { "auto-complete": "off" },
+                                        on: {
+                                          change: function(value) {
+                                            _vm.tmd1(
+                                              value,
+                                              scope.row,
+                                              scope.$index
+                                            )
+                                          }
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.formData.product[scope.$index]
+                                              .address,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.formData.product[
+                                                scope.$index
+                                              ],
+                                              "address",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "formData.product[scope.$index].address"
+                                        }
+                                      })
+                                    : _vm._e()
                                 ]
                               }
                             }

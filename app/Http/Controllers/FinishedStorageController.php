@@ -229,6 +229,7 @@ class FinishedStorageController extends Controller
     {
         //
         $storage = FinishedStorage::findOrFail($id);
+
         try{
             DB::transaction(function() use ($request,$storage){
                 $data = $request->all();
@@ -239,23 +240,75 @@ class FinishedStorageController extends Controller
                 }
                 $data['storage_money'] = bcmul($data['price'],$data['quantity'],2);
                 if($data['storage_type'] == 3){
+                    /** old code
                     $outgoing = OutgoingProduct::findOrFail($request->get('outgoing_product'));
 
                     if($data['quantity'] > ($outgoing->outgoing_quantity - $outgoing->return_quantity)){
                         throw new \ErrorException('入库数量不能大于出库数量');
                     }
-                    /*if($data['price'] > $outgoing->product_price){
-                        throw new \ErrorException('入库价格不能大于出库价格');
-                    }*/
+//                    if($data['price'] > $outgoing->product_price){
+//                        throw new \ErrorException('入库价格不能大于出库价格');
+//                    }
                     $outgoing->return_quantity = $data['quantity'];
                     $outgoing->save();
+                     */
+                    /**
+                     * 1.
+                     */
+                    $data['quantity'] = collect($data['product'])->sum('return_quantity');
+
+                    $outMoney = 0;
+                    $outgoingId = 0;
+
+                    foreach($data['product'] as $product){
+                        $outgoingProduct = OutgoingProduct::findOrFail($product['id']);
+                        $outgoingId = $outgoingProduct->outgoing_id;
+
+                        $minusFrom = $outgoingProduct->minus_from;
+
+                        if(0 == $product['return_quantity']){
+                            // 为0 的话减去相应记录
+                            $diff = $outgoingProduct->outgoing_quantity;
+
+                            $outgoingProduct->delete();
+
+                        }else{
+                            $diff = $outgoingProduct->outgoing_quantity + $product['return_quantity'];
+
+                            $outgoingProduct->outgoing_quantity = -$product['return_quantity'];
+                            $outgoingProduct->address = $product['address'];
+                            $outgoingProduct->storage_money = bcmul($outgoingProduct->product_price, $product['return_quantity'],2);
+
+                            $outMoney +=  $outgoingProduct->storage_money;
+
+
+
+                            $outgoingProduct->save();
+                        }
+
+                        // 修改原出库商品的退货数量
+                        OutgoingProduct::where('id', $minusFrom)->update([
+                            'return_quantity' => \DB::raw('return_quantity + ' . $diff)
+                        ]);
+
+                    }
+
+                    $finishedOutgoing = FinishedOutgoing::findOrFail($outgoingId);
+                    $finishedOutgoing->update([
+                        'outgoing_money' => -$outMoney,
+                        'value_added_tax'=>-$this->outgoing($finishedOutgoing->taxation,$outMoney)['value_added_tax'],
+                        'withholding_tax' =>-$this->outgoing($finishedOutgoing->taxation,$outMoney)['withholding_tax'],
+                        'receivable_money' => bcsub(bcadd(-$this->outgoing($finishedOutgoing->taxation,$outMoney)['value_added_tax'],-$outMoney,2),-$this->outgoing($finishedOutgoing->taxation,$outMoney)['withholding_tax'],2),
+                    ]);
+
                 }
                 $storage->fill($data)->save();
 
             });
             return success();
         }catch (\ErrorException $exception){
-            return fail($exception->getMessage());
+
+            return fail($exception->getTrace(), $exception->getMessage());
         }
     }
 

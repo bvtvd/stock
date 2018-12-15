@@ -42,20 +42,13 @@ class FinishedStorageRequest extends FormRequest
                 'contract_number' => 'required_if:storage_type,3'
             ];
         }
-        $rules =  [
-            //
-            //'product_id' => 'required',
+        if(3 == request()->get('storage_type')){
+            $rules =  array_merge($rules, [
+                'product.*.return_quantity' => 'required',
+                'product.*.address' => 'required'
+            ]);
+        }
 
-
-            //'quantity'  =>  'required' ,
-            //'storage_money' =>  'required' ,
-            //'metering_unit' =>  'required',
-            //'remarks'   =>  'required',
-            //'appendix'  =>  'required' ,
-            //'storage_time'  =>  'required',
-
-
-        ];
         return $rules;
 
     }
@@ -73,7 +66,9 @@ class FinishedStorageRequest extends FormRequest
             'appendix'  =>    '入库附件',
             //'storage_time'  =>  '入库时间',
             'storage_type'  =>  '入库类型',
-            'contract_number' => '合同编号'
+            'contract_number' => '合同编号',
+            'product.*.return_quantity' => '入库数量',
+            'product.*.address' => '入库地点',
         ];
     }
 }

@@ -173,7 +173,7 @@
             <el-form :model="formData"  :rules="rules" ref="ruleForm"  :label-width="formLabelWidth">
 
                 <el-form-item label="入库类型" :label-width="formLabelWidth">
-                    <el-select v-model="formData.storage_type" :change="changeType()" placeholder="请选择入库类型">
+                    <el-select v-model="formData.storage_type" @change="changeType()" placeholder="请选择入库类型">
                         <el-option
                                 v-for="item in types"
                                 :key="item.id"
@@ -234,7 +234,7 @@
                                     label="入库数量"
                                     align="center">
                                 <template slot-scope="scope">
-                                    <el-input  v-model="formData.product[scope.$index].return_quantity" @change="(value) => { tmd(value,scope.row,scope.$index)}" auto-complete="off"></el-input>
+                                    <el-input v-if="formData.product"  v-model="formData.product[scope.$index].return_quantity" @change="(value) => { tmd(value,scope.row,scope.$index)}" auto-complete="off"></el-input>
                                 </template>
                             </el-table-column>
                             <el-table-column
@@ -242,7 +242,7 @@
                                     label="入库地点"
                                     align="center">
                                 <template slot-scope="scope">
-                                    <el-input  v-model="formData.product[scope.$index].address" @change="(value) => { tmd1(value,scope.row,scope.$index)}"  auto-complete="off"></el-input>
+                                    <el-input v-if="formData.product"  v-model="formData.product[scope.$index].address" @change="(value) => { tmd1(value,scope.row,scope.$index)}"  auto-complete="off"></el-input>
                                 </template>
                             </el-table-column>
                             <!--<el-table-column-->
@@ -250,7 +250,7 @@
                                     <!--label="备注"-->
                                     <!--align="center">-->
                                 <!--<template slot-scope="scope">-->
-                                    <!--<el-input  v-model="formData.product[scope.$index].remarks" @change="(value) => { tmd2(value,scope.row,scope.$index)}"  auto-complete="off"></el-input>-->
+                                    <!--<el-input v-if="formData.product"  v-model="formData.product[scope.$index].remarks" @change="(value) => { tmd2(value,scope.row,scope.$index)}"  auto-complete="off"></el-input>-->
                                 <!--</template>-->
                             <!--</el-table-column>-->
                         </el-table>
@@ -317,7 +317,6 @@
                 currentUrl : this.$adminPath + 'finished',//当前页面的url
                 tableData: [],//表格数据
                 formData:{
-
                 },//表单数据
                 dialogFormVisible:false,
                 formLabelWidth:'20%',
@@ -397,7 +396,7 @@
                 self.formData = {
 
                 };
-
+                self.outgoingProductTable = []
                 self.methodType = 1;//设置请求方法为添加
                 self.dialogTitle = '新增入库信息';
 
@@ -440,9 +439,34 @@
 
                 self.methodType = 0 ;//设置请求方法为修改
                 self.dialogFormVisible = true;
+
+                console.log(this.outgoingProductTable)
+                if(3 == self.formData.storage_type){
+                    // 编辑退货入库的操作
+                    this.changeType();
+                    this.getOutgoingProducts(self.formData.contract_number).then(res => {
+
+                        //查询出之前的出库商品
+                        if(self.formData.product){
+                            self.formData.out.map(item => {
+
+                                self.formData.product.filter( e => {
+                                    if(e.outgoing_product == item.minus_from){
+                                        e.return_quantity = Math.abs(item.outgoing_quantity);
+                                        e.address = item.address;
+                                        e.id = item.id;
+                                    }
+                                })
+                            })
+                        }
+                    })
+                }
             },
             update(formName){//更新数据
                 let self = this;
+
+                console.log(this.formData);
+
                 self.$refs[formName].validate((valid) => {
                     if(valid){
                         self.$emit('showLoading');
@@ -577,17 +601,6 @@
                 if(self.formData.storage_type == 3){
                     self.showContract = 'display:block;';
                     self.showProduct = false;
-                    self.outgoingProductTable = self.outgoingProduct;
-                    self.formData.product = [];
-                    self.outgoingProductTable && self.outgoingProductTable.forEach(function(val){
-                        self.formData.product.push({
-                            outgoing_product:val.id,
-                            return_quantity:'',
-                            address:'',
-                            remarks:'',
-                            product_id:val.product_id
-                        })
-                    })
 
                 }else{
                     self.showContract = 'display:none;';
@@ -597,11 +610,22 @@
             },
             getOutgoingProducts(val){//获取合同编号下的商品
                 let self = this;
-                self.$axios.get(self.$adminPath + 'outgoing',{params:{contract_number:val}})
+                return self.$axios.get(self.$adminPath + 'outgoing',{params:{contract_number:val}})
                     .then(function(res){
                         if(res.data.code == 1000){
                             self.products = res.data.data.product;
                             self.outgoingProduct = res.data.data.product;
+                            self.outgoingProductTable = self.outgoingProduct;
+                            self.formData.product = [];
+                            self.outgoingProductTable && self.outgoingProductTable.forEach(function(val){
+                                self.formData.product.push({
+                                    outgoing_product:val.id,
+                                    return_quantity:'',
+                                    address:'',
+                                    remarks:'',
+                                    product_id:val.product_id
+                                })
+                            })
                         }else{
                             self.$message.error('该合同号不存在');
                         }
