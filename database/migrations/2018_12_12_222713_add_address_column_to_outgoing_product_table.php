@@ -16,6 +16,7 @@ class AddAddressColumnToOutgoingProductTable extends Migration
         Schema::table('outgoing_product', function (Blueprint $table) {
             $table->string('address')->nullable()->comment('退货入库地点');
             $table->decimal('storage_money', 11, 2)->nullable()->comment('入库金额');
+            $table->integer('minus_from')->nullable()->comment('outgoing_product_id, 退货入库来源');
         });
     }
 

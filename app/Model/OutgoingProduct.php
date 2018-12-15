@@ -15,19 +15,26 @@ class OutgoingProduct extends Model
 
     public function product()
     {
-        return $this->hasOne(Product::class,'id','product_id');
+        return $this->hasOne(Product::class, 'id', 'product_id');
     }
 
 
     public function storage()
     {
-        return $this->hasOne(FinishedStorage::class,'id','storage_id');
+        return $this->hasOne(FinishedStorage::class, 'id', 'storage_id');
     }
 
     public function out()
     {
-        return $this->hasOne(FinishedOutgoing::class,'id','outgoing_id');
+        return $this->hasOne(FinishedOutgoing::class, 'id', 'outgoing_id');
     }
+
+
+    public function minusFrom()
+    {
+        return $this->belongsTo(self::class, 'minus_from', 'id');
+    }
+
 
     public function getStorageMoneyAttribute($value)
     {

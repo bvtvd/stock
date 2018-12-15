@@ -56,7 +56,8 @@ class FinishedStorageController extends Controller
                     /**
                      * 1. 创建入库记录( 入库类型为退货入库 storage_type=3)
                      * 2. 根据 每种出库商品的 id 找到出库商品记录 (OutgoingProduct) 添加相应的退货数量 (return quantity)
-                     * 3.
+                     * 3. 根据相关信息生成一条出库记录(FinishedOutgoing, 内容为退货入库, 金额及税额等相关为负数, 并且与出库商品关联)
+                     * 4. 根据退货商品信息生成出库商品信息
                      */
                     $request->offsetSet('outgoing_type',4);
                     $out_data = [];
@@ -114,7 +115,8 @@ class FinishedStorageController extends Controller
                                     'product_id' => $data['product_id'],
                                     'storage_id' => $storage->id,
                                     'address' => $item['address'],
-                                    'storage_money' => $data['storage_money']
+                                    'storage_money' => $data['storage_money'],
+                                    'minus_from' => $data['outgoing_product']
                                 ]) ;
                             }else{
                                 throw new \ErrorException('退货数量与退货地址不能为空');
@@ -271,23 +273,48 @@ class FinishedStorageController extends Controller
                 $storage = FinishedStorage::find($id);
 
                 if($storage->storage_type == 3){
-                    $out = OutgoingProduct::findOrFail($storage->outgoing_product);
-                    $out->return_quantity = $out->return_quantity - $storage->quantity;
-                    //$out->outgoing_quantity = $out->outgoing_quantity + $storage->quantity;
-                    $outgoing = FinishedOutgoing::findOrFail($out->outgoing_id);
-                    //$outgoing->receivable_money = $outgoing->receivable_money + $storage->storage_money;
-                    $out->save();
-                    $outgoing->save();
-                    $out_product = OutgoingProduct::where('storage_id',$id)->first();
-                    if($out_product){
-                        $out_product->delete();
-                        if(!$out_product->storage->out){
-                            $out_product->storage->delete();
+
+                    if($storage->outgoing_product){
+
+                        // 兼容之前的代码
+
+                        $out = OutgoingProduct::findOrFail($storage->outgoing_product);
+                        $out->return_quantity = $out->return_quantity - $storage->quantity;
+                        //$out->outgoing_quantity = $out->outgoing_quantity + $storage->quantity;
+                        $outgoing = FinishedOutgoing::findOrFail($out->outgoing_id);
+                        //$outgoing->receivable_money = $outgoing->receivable_money + $storage->storage_money;
+                        $out->save();
+                        $outgoing->save();
+                        $out_product = OutgoingProduct::where('storage_id',$id)->first();
+                        if($out_product){
+                            $out_product->delete();
+                            if(!$out_product->storage->out){
+                                $out_product->storage->delete();
+                            }
+                            if(!$out_product->out->product->count()){
+                                $out_product->out->delete();
+                            }
                         }
-                        if(!$out_product->out->product->count()){
-                            $out_product->out->delete();
+                    }else{
+                        // 退库操作合并了之后的逻辑
+                        $outgoingProducts = OutgoingProduct::where('storage_id', $id)->get();
+
+                        $outgoingId = 0;
+
+                        foreach($outgoingProducts as $outgoingProduct){
+                            $outgoingId = $outgoingProduct->outgoing_id;
+
+                            // 之前的退货数量再给他扣回去
+                            $outgoingProduct->minusFrom->return_quantity += $outgoingProduct->outgoing_quantity;
+                            $outgoingProduct->minusFrom->save();
+
+                            $outgoingProduct->delete();
                         }
+
+                        // 再删除出库记录
+                        FinishedOutgoing::where('id', $outgoingId)->delete();
                     }
+
 
                 }
                 $storage->delete();
