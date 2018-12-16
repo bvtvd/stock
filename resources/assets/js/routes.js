@@ -97,13 +97,19 @@ let routes = [
     {
         path: '/admin/system',
         component: Home,
-        name:'分类管理',
+        name:'系统设置',
         icon: 'fa fa-bar-chart',
         children: [
             {
                 path:'category',
                 component:resolve => require(['./views/category.vue'], resolve),
                 name:'分类管理',
+                icon:'fa fa-bar-chart'
+            },
+            {
+                path:'manage',
+                component:resolve => require(['./views/manage.vue'], resolve),
+                name:'系统管理',
                 icon:'fa fa-bar-chart'
             }
         ]

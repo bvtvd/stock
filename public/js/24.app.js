@@ -1,24 +1,24 @@
 webpackJsonp([24],{
 
-/***/ 696:
+/***/ 693:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(721)
+  __webpack_require__(711)
 }
 var normalizeComponent = __webpack_require__(45)
 /* script */
-var __vue_script__ = __webpack_require__(723)
+var __vue_script__ = __webpack_require__(713)
 /* template */
-var __vue_template__ = __webpack_require__(724)
+var __vue_template__ = __webpack_require__(714)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-d181c9dc"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -29,18 +29,18 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\views\\admin.vue"
+Component.options.__file = "resources\\assets\\js\\views\\product.vue"
 
 /* hot reload */
 if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-352a6832", Component.options)
+    hotAPI.createRecord("data-v-d181c9dc", Component.options)
   } else {
-    hotAPI.reload("data-v-352a6832", Component.options)
+    hotAPI.reload("data-v-d181c9dc", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -52,23 +52,23 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 721:
+/***/ 711:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(722);
+var content = __webpack_require__(712);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(46)("c841af2a", content, false, {});
+var update = __webpack_require__(46)("67f81b9f", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-352a6832\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=styles&index=0!./admin.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-352a6832\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=styles&index=0!./admin.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d181c9dc\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./product.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d181c9dc\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./product.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -79,7 +79,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 722:
+/***/ 712:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(23)(false);
@@ -87,14 +87,14 @@ exports = module.exports = __webpack_require__(23)(false);
 
 
 // module
-exports.push([module.i, "\n.el-table .red-row {\n    background: #ff4d51;\n}\n.el-table .green-row {\n    background: #00ff00;\n}\n", ""]);
+exports.push([module.i, "\n.el-table .red-row[data-v-d181c9dc] {\n    background: #ff4d51;\n}\n.el-table .green-row[data-v-d181c9dc] {\n    background: #00ff00;\n}\n.demo-table-expand[data-v-d181c9dc] {\n    font-size: 0;\n}\n.demo-table-expand label[data-v-d181c9dc] {\n    width: 90px;\n    color: #99a9bf;\n}\n.demo-table-expand .el-form-item[data-v-d181c9dc] {\n    margin-right: 0;\n    margin-bottom: 0;\n    width: 50%;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 723:
+/***/ 713:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -243,60 +243,82 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     data: function data() {
-        var _this = this;
 
-        var validatePass2 = function validatePass2(rule, value, callback) {
-            if (value === '') {
-                callback(new Error('请再次输入密码'));
-            } else if (value !== _this.formData.password) {
-                callback(new Error('两次输入密码不一致!'));
-            } else {
-                callback();
-            }
-        };
         return {
-            uri: this.$adminPath + 'admin', //当前页面的url
+            currentUrl: this.$adminPath + 'product', //当前页面的url
             tableData: [], //表格数据
-            formData: {
-                roles: ''
-            }, //表单数据
+            formData: {}, //表单数据
             dialogFormVisible: false,
             formLabelWidth: '20%',
-            filters: {
-                status: ''
-            }, //搜索
-            dialogTitle: '添加管理员', //标题
+            filters: {}, //搜索
+            dialogTitle: '', //标题
             methodType: 1, //请求的方法类型1=新增 0=修改
             pageData: {
                 page: 0,
                 per_page: 0,
                 total: 0
             },
-            options: [{
-                value: '0',
-                label: '禁用'
-            }, {
-                value: '1',
-                label: '启用'
-            }],
-            roles: [{
-                id: '0',
-                name: '禁用'
-            }],
 
-            rules: { //验证规则
-                name: [{ required: true, message: '请输入管理员姓名', trigger: 'blur' }, { min: 2, max: 16, message: '长度在 2 到 16个字符', trigger: 'blur' }],
-                account: [{ required: true, message: '请输入管理员账号', trigger: 'blur' }, { min: 5, max: 16, message: '长度在 5 到 16个字符', trigger: 'blur' }],
-                password: [{ required: true, message: '请输入管理员密码', trigger: 'blur' }, { min: 6, max: 16, message: '长度在 6 到 16个字符', trigger: 'blur' }],
-                password_confirmation: [{ validator: validatePass2, trigger: 'blur' }]
+            rules: {//验证规则
 
             },
-            passwordRuleEdit: [{ min: 6, max: 16, message: '长度在 6 到 16个字符', trigger: 'blur' }],
-            passwordRuleAdd: [{ required: true, message: '请输入管理员密码', trigger: 'blur' }, { min: 6, max: 16, message: '长度在 6 到 16个字符', trigger: 'blur' }]
-
+            category: []
         };
     },
 
@@ -307,7 +329,7 @@ exports.default = {
             var self = this;
             var parm = Object.assign(filters, self.pageData);
 
-            self.$axios.get(self.uri, { params: parm }).then(function (res) {
+            self.$axios.get(self.currentUrl, { params: parm }).then(function (res) {
 
                 if (res.data.code == 1000) {
                     self.pageData.page = Number(res.data.data.current_page);
@@ -319,16 +341,15 @@ exports.default = {
                 console.log(error);
             });
         },
-        viewForAdd: function viewForAdd() {
+        create: function create() {
             //显示添加页面
             var self = this;
             self.formData = {
-                status: '1',
-                roles: ''
+                status: '1'
             };
-            self.rules.password = self.passwordRuleAdd;
+
             self.methodType = 1; //设置请求方法为添加
-            self.dialogTitle = '添加管理员';
+            self.dialogTitle = '新增产品';
 
             self.dialogFormVisible = true;
         },
@@ -339,7 +360,7 @@ exports.default = {
                 if (valid) {
                     self.$emit('showLoading');
 
-                    self.$axios.post(self.uri, self.formData).then(function (res) {
+                    self.$axios.post(self.currentUrl, self.formData).then(function (res) {
                         self.$emit('showLoading');
 
                         if (res.data.code == 1000) {
@@ -357,15 +378,14 @@ exports.default = {
                 }
             });
         },
-        viewForEdit: function viewForEdit(index, row) {
+        edit: function edit(index, row) {
             //显示编辑视图
             var self = this;
             self.formData = Object.assign({}, row);
-            self.formData.status = String(self.formData.status); //将账号状态转为字符串
-            self.formData.roles = self.formData.roles[0] ? self.formData.roles[0]['id'] : ''; //将账号状态转为字符串
-            self.formData.old_roles = self.formData.roles[0] ? self.formData.roles[0]['id'] : ''; //获取管理员当前账号 单角色取 下标0
-            self.dialogTitle = '编辑管理员信息';
-            self.rules.password = self.passwordRuleEdit;
+
+            self.formData.status = String(self.formData.status);
+            self.dialogTitle = '编辑产品';
+
             self.methodType = 0; //设置请求方法为修改
             self.dialogFormVisible = true;
         },
@@ -376,7 +396,7 @@ exports.default = {
                 if (valid) {
                     self.$emit('showLoading');
                     self.formData._method = 'PUT';
-                    self.$axios.post(self.uri + '/' + self.formData.id, self.formData).then(function (res) {
+                    self.$axios.post(self.currentUrl + '/' + self.formData.id, self.formData).then(function (res) {
                         self.$emit('showLoading');
 
                         if (res.data.code == 1000) {
@@ -395,7 +415,7 @@ exports.default = {
                 }
             });
         },
-        delHandle: function delHandle(row) {
+        destroy: function destroy(row) {
             //删除
             var self = this;
 
@@ -405,7 +425,7 @@ exports.default = {
                 type: 'warning'
             }).then(function () {
                 self.$emit('showLoading');
-                self.$axios.post(self.uri + '/' + row.id, { _method: 'delete' }).then(function (res) {
+                self.$axios.post(self.currentUrl + '/' + row.id, { _method: 'delete' }).then(function (res) {
                     self.$emit('showLoading');
 
                     if (res.data.code == 1000) {
@@ -440,42 +460,28 @@ exports.default = {
         },
         reset: function reset() {
             //重置搜索表单
-            this.filters = {
-                name: '',
-                account: '',
-                status: ''
-            };
+            this.filters = {};
             this.getData();
         },
-        statusFormat: function statusFormat(row, column) {
-            //格式化状态
-            return ['禁用', '启用'][row.status];
-        },
-        getRoles: function getRoles() {
-            //获取角色
+        getCategory: function getCategory() {
             var self = this;
 
-            self.$axios.get(self.$adminPath + 'admin/role').then(function (res) {
-                self.roles = res.data.data;
+            self.$axios.get(self.$adminPath + 'category?old=1').then(function (res) {
+                self.category = res.data.data;
             }).catch(function (error) {
                 console.log(error);
             });
-        },
-        rolesFormat: function rolesFormat(row) {
-            //返回角色名称
-
-            return row.roles[0] ? row.roles[0]['name'] : '未设置';
         }
     },
     mounted: function mounted() {
         this.getData();
-        this.getRoles();
+        this.getCategory();
     }
 };
 
 /***/ }),
 
-/***/ 724:
+/***/ 714:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -499,15 +505,16 @@ var render = function() {
             [
               _c(
                 "el-form-item",
+                { attrs: { label: "产品名称" } },
                 [
                   _c("el-input", {
-                    attrs: { placeholder: "请输入管理员姓名" },
+                    attrs: { "auto-complete": "off" },
                     model: {
-                      value: _vm.filters.name,
+                      value: _vm.filters.product_name,
                       callback: function($$v) {
-                        _vm.$set(_vm.filters, "name", $$v)
+                        _vm.$set(_vm.filters, "product_name", $$v)
                       },
-                      expression: "filters.name"
+                      expression: "filters.product_name"
                     }
                   })
                 ],
@@ -516,40 +523,24 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "el-form-item",
-                [
-                  _c("el-input", {
-                    attrs: { placeholder: "请输入管理员账号" },
-                    model: {
-                      value: _vm.filters.account,
-                      callback: function($$v) {
-                        _vm.$set(_vm.filters, "account", $$v)
-                      },
-                      expression: "filters.account"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "el-form-item",
+                { attrs: { label: "产品分类" } },
                 [
                   _c(
                     "el-select",
                     {
-                      attrs: { placeholder: "请选择账号状态" },
+                      attrs: { placeholder: "请选择" },
                       model: {
-                        value: _vm.filters.status,
+                        value: _vm.filters.category_id,
                         callback: function($$v) {
-                          _vm.$set(_vm.filters, "status", $$v)
+                          _vm.$set(_vm.filters, "category_id", $$v)
                         },
-                        expression: "filters.status"
+                        expression: "filters.category_id"
                       }
                     },
-                    _vm._l(_vm.options, function(item) {
+                    _vm._l(_vm.category, function(item) {
                       return _c("el-option", {
-                        key: item.value,
-                        attrs: { label: item.label, value: item.value }
+                        key: item.id,
+                        attrs: { label: item.name, value: item.id }
                       })
                     })
                   )
@@ -602,7 +593,11 @@ var render = function() {
                     "el-button",
                     {
                       attrs: { type: "primary" },
-                      on: { click: _vm.viewForAdd }
+                      on: {
+                        click: function($event) {
+                          _vm.create()
+                        }
+                      }
                     },
                     [_vm._v("新增")]
                   )
@@ -621,41 +616,84 @@ var render = function() {
         { staticStyle: { width: "100%" }, attrs: { data: _vm.tableData } },
         [
           _c("el-table-column", {
-            attrs: { prop: "id", label: "#", align: "center" }
-          }),
-          _vm._v(" "),
-          _c("el-table-column", {
-            attrs: { prop: "name", label: "姓名", align: "center" }
-          }),
-          _vm._v(" "),
-          _c("el-table-column", {
-            attrs: { prop: "account", label: "账号", align: "center" }
-          }),
-          _vm._v(" "),
-          _c("el-table-column", {
-            attrs: {
-              prop: "status",
-              label: "状态",
-              align: "center",
-              formatter: _vm.statusFormat
-            },
+            attrs: { type: "expand" },
             scopedSlots: _vm._u([
               {
                 key: "default",
-                fn: function(scope) {
+                fn: function(props) {
                   return [
                     _c(
-                      "el-tag",
+                      "el-form",
                       {
-                        attrs: {
-                          type:
-                            _vm.statusFormat(scope.row) == "禁用"
-                              ? "danger"
-                              : "success",
-                          "close-transition": ""
-                        }
+                        staticClass: "demo-table-expand",
+                        attrs: { "label-position": "left", inline: "" }
                       },
-                      [_vm._v(_vm._s(_vm.statusFormat(scope.row)))]
+                      [
+                        _c("el-form-item", { attrs: { label: "产品名称" } }, [
+                          _c("span", [_vm._v(_vm._s(props.row.name))])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "产品分类" } }, [
+                          _c("span", [_vm._v(_vm._s(props.row.category.name))])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "市场单价" } }, [
+                          _c("span", [_vm._v(_vm._s(props.row.market_price))])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "计量单位" } }, [
+                          _c("span", [_vm._v(_vm._s(props.row.metering_unit))])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "型号规格" } }, [
+                          _c("span", [_vm._v(_vm._s(props.row.spec))])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "添加人" } }, [
+                          _c("span", [_vm._v(_vm._s(props.row.user.username))])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "添加时间" } }, [
+                          _c("span", [_vm._v(_vm._s(props.row.created_at))])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "产品状态" } }, [
+                          _c(
+                            "span",
+                            [
+                              _c(
+                                "el-tag",
+                                {
+                                  attrs: {
+                                    type:
+                                      props.row.status === "0"
+                                        ? "danger"
+                                        : "success",
+                                    "close-transition": ""
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(
+                                        props.row.status === "0"
+                                          ? "禁用"
+                                          : "启用"
+                                      ) +
+                                      "\n                            "
+                                  )
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "详情" } }, [
+                          _c("span", [_vm._v(_vm._s(props.row.desc))])
+                        ])
+                      ],
+                      1
                     )
                   ]
                 }
@@ -664,11 +702,40 @@ var render = function() {
           }),
           _vm._v(" "),
           _c("el-table-column", {
+            attrs: { prop: "id", label: "#", align: "center" }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
             attrs: {
-              formatter: _vm.rolesFormat,
-              label: "角色",
-              align: "center"
+              prop: "name",
+              label: "产品名称",
+              align: "center",
+              width: "400"
             }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: { prop: "category.name", label: "产品分类", align: "center" }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: { prop: "market_price", label: "市场单价", align: "center" }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: { prop: "metering_unit", label: "计量单位", align: "center" }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: { prop: "spec", label: "型号规格", align: "center" }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: { prop: "user.username", label: "添加人", align: "center" }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: { prop: "created_at", label: "添加时间", align: "center" }
           }),
           _vm._v(" "),
           _c("el-table-column", {
@@ -684,7 +751,7 @@ var render = function() {
                         attrs: { size: "small" },
                         on: {
                           click: function($event) {
-                            _vm.viewForEdit(scope.$index, scope.row)
+                            _vm.edit(scope.$index, scope.row)
                           }
                         }
                       },
@@ -697,7 +764,7 @@ var render = function() {
                         attrs: { size: "small", type: "danger" },
                         on: {
                           click: function($event) {
-                            _vm.delHandle(scope.row)
+                            _vm.destroy(scope.row)
                           }
                         }
                       },
@@ -750,14 +817,18 @@ var render = function() {
             "el-form",
             {
               ref: "ruleForm",
-              attrs: { model: _vm.formData, rules: _vm.rules }
+              attrs: {
+                model: _vm.formData,
+                rules: _vm.rules,
+                "label-width": _vm.formLabelWidth
+              }
             },
             [
               _c(
                 "el-form-item",
                 {
                   attrs: {
-                    label: "姓名",
+                    label: "产品名称",
                     "label-width": _vm.formLabelWidth,
                     prop: "name"
                   }
@@ -781,20 +852,52 @@ var render = function() {
                 "el-form-item",
                 {
                   attrs: {
-                    label: "账号",
+                    label: "产品分类",
+                    "label-width": _vm.formLabelWidth
+                  }
+                },
+                [
+                  _c(
+                    "el-select",
+                    {
+                      attrs: { placeholder: "请选择" },
+                      model: {
+                        value: _vm.formData.category_id,
+                        callback: function($$v) {
+                          _vm.$set(_vm.formData, "category_id", $$v)
+                        },
+                        expression: "formData.category_id"
+                      }
+                    },
+                    _vm._l(_vm.category, function(item) {
+                      return _c("el-option", {
+                        key: item.id,
+                        attrs: { label: item.name, value: item.id }
+                      })
+                    })
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                {
+                  attrs: {
+                    label: "市场单价",
                     "label-width": _vm.formLabelWidth,
-                    prop: "account"
+                    prop: "name"
                   }
                 },
                 [
                   _c("el-input", {
                     attrs: { "auto-complete": "off" },
                     model: {
-                      value: _vm.formData.account,
+                      value: _vm.formData.market_price,
                       callback: function($$v) {
-                        _vm.$set(_vm.formData, "account", $$v)
+                        _vm.$set(_vm.formData, "market_price", $$v)
                       },
-                      expression: "formData.account"
+                      expression: "formData.market_price"
                     }
                   })
                 ],
@@ -805,20 +908,20 @@ var render = function() {
                 "el-form-item",
                 {
                   attrs: {
-                    label: "密码",
+                    label: "计量单位",
                     "label-width": _vm.formLabelWidth,
-                    prop: "password"
+                    prop: "name"
                   }
                 },
                 [
                   _c("el-input", {
-                    attrs: { type: "password", "auto-complete": "off" },
+                    attrs: { "auto-complete": "off" },
                     model: {
-                      value: _vm.formData.password,
+                      value: _vm.formData.metering_unit,
                       callback: function($$v) {
-                        _vm.$set(_vm.formData, "password", $$v)
+                        _vm.$set(_vm.formData, "metering_unit", $$v)
                       },
-                      expression: "formData.password"
+                      expression: "formData.metering_unit"
                     }
                   })
                 ],
@@ -829,20 +932,20 @@ var render = function() {
                 "el-form-item",
                 {
                   attrs: {
-                    label: "确认密码",
+                    label: "型号规格",
                     "label-width": _vm.formLabelWidth,
-                    prop: "password_confirmation"
+                    prop: "name"
                   }
                 },
                 [
                   _c("el-input", {
-                    attrs: { type: "password", "auto-complete": "off" },
+                    attrs: { "auto-complete": "off" },
                     model: {
-                      value: _vm.formData.password_confirmation,
+                      value: _vm.formData.spec,
                       callback: function($$v) {
-                        _vm.$set(_vm.formData, "password_confirmation", $$v)
+                        _vm.$set(_vm.formData, "spec", $$v)
                       },
-                      expression: "formData.password_confirmation"
+                      expression: "formData.spec"
                     }
                   })
                 ],
@@ -851,31 +954,24 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "el-form-item",
-                { attrs: { label: "角色", "label-width": _vm.formLabelWidth } },
+                {
+                  attrs: {
+                    label: "详情",
+                    "label-width": _vm.formLabelWidth,
+                    prop: "name"
+                  }
+                },
                 [
-                  _c(
-                    "el-select",
-                    {
-                      attrs: { placeholder: "请选择管理员角色" },
-                      model: {
-                        value: _vm.formData.roles,
-                        callback: function($$v) {
-                          _vm.$set(_vm.formData, "roles", $$v)
-                        },
-                        expression: "formData.roles"
-                      }
-                    },
-                    _vm._l(_vm.roles, function(item) {
-                      return _c("el-option", {
-                        key: item.id,
-                        attrs: {
-                          label: item.name,
-                          value: item.id,
-                          disabled: item.disabled
-                        }
-                      })
-                    })
-                  )
+                  _c("el-input", {
+                    attrs: { type: "textarea", "auto-complete": "off" },
+                    model: {
+                      value: _vm.formData.desc,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formData, "desc", $$v)
+                      },
+                      expression: "formData.desc"
+                    }
+                  })
                 ],
                 1
               ),
@@ -897,6 +993,30 @@ var render = function() {
                         _vm.$set(_vm.formData, "status", $$v)
                       },
                       expression: "formData.status"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                {
+                  attrs: {
+                    label: "排序",
+                    "label-width": _vm.formLabelWidth,
+                    prop: "name"
+                  }
+                },
+                [
+                  _c("el-input", {
+                    attrs: { type: "number", "auto-complete": "off" },
+                    model: {
+                      value: _vm.formData.sort,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formData, "sort", $$v)
+                      },
+                      expression: "formData.sort"
                     }
                   })
                 ],
@@ -956,7 +1076,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-352a6832", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-d181c9dc", module.exports)
   }
 }
 

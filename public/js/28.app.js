@@ -1,18 +1,22 @@
 webpackJsonp([28],{
 
-/***/ 691:
+/***/ 701:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(743)
+}
 var normalizeComponent = __webpack_require__(45)
 /* script */
-var __vue_script__ = __webpack_require__(704)
+var __vue_script__ = __webpack_require__(745)
 /* template */
-var __vue_template__ = __webpack_require__(705)
+var __vue_template__ = __webpack_require__(746)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -25,18 +29,18 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\views\\menu.vue"
+Component.options.__file = "resources\\assets\\js\\views\\finished-outgoing.vue"
 
 /* hot reload */
 if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-06e9294c", Component.options)
+    hotAPI.createRecord("data-v-24fbd26c", Component.options)
   } else {
-    hotAPI.reload("data-v-06e9294c", Component.options)
+    hotAPI.reload("data-v-24fbd26c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48,7 +52,49 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 704:
+/***/ 743:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(744);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(46)("c6fa87cc", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-24fbd26c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./finished-outgoing.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-24fbd26c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./finished-outgoing.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 744:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(23)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.el-table .red-row {\n    background: #ff4d51;\n}\n.el-table .green-row {\n    background: #00ff00;\n}\n.upload-storage-appendix input[type=\"file\"] {\n    display: none;\n}\n.demo-table-expand {\n    font-size: 0;\n}\n.demo-table-expand label {\n    width: 90px;\n    color: #99a9bf;\n}\n.demo-table-expand .el-form-item {\n    margin-right: 0;\n    margin-bottom: 0;\n    width: 50%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 745:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -114,120 +160,491 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     data: function data() {
-        return {
 
-            defaultProps: {
-                children: 'children',
-                label: 'display_name'
-            },
-            menus: [{
-                id: 0,
-                display_name: 'Root',
-                children: [],
-                display: '1'
-            }],
+        return {
+            currentUrl: this.$adminPath + 'outgoing', //当前页面的url
+            tableData: [], //表格数据
+            formData: {
+                product: [{
+                    product_id: '',
+                    quantity: '',
+                    price: ''
+                }]
+            }, //表单数据
             dialogFormVisible: false,
-            nodeFormData: {},
+            dialogProductVisible: false,
             formLabelWidth: '20%',
-            dialogName: '菜单管理',
-            methodType: 0,
-            currentUrl: this.$adminPath + 'permission',
-            category: []
+            filters: {
+                contract: ''
+            }, //搜索
+            dialogTitle: '新增出库信息', //标题
+            methodType: 1, //请求的方法类型1=新增 0=修改
+            pageData: {
+                page: 0,
+                per_page: 0,
+                total: 0
+            },
+
+            rules: {//验证规则
+
+            },
+            types: [{
+                id: 1,
+                name: '销售'
+            }, {
+                id: 2,
+                name: '样品'
+            }, {
+                id: 3,
+                name: '调拨出库'
+            }],
+            products: [],
+            fileList: [],
+            showContract: 'display:none;',
+            business: [],
+            productsDetail: [],
+            category_id: '',
+            dialogMoneyVisible: false
+
         };
     },
 
-
     methods: {
+        getData: function getData() {
+            var filters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+            //获取数据
+            var self = this;
+            var parm = Object.assign(filters, self.pageData);
+            parm.category_id = self.category_id;
 
-        /**
-         * 点击节点名称时开关节点
-         * @param node
-         */
-        nodeExpand: function nodeExpand(node) {
-            node.expanded = !node.expanded;
+            self.$axios.get(self.currentUrl, { params: parm }).then(function (res) {
+
+                if (res.data.code == 1000) {
+                    self.pageData.page = Number(res.data.data.current_page);
+                    self.pageData.per_page = Number(res.data.data.per_page);
+                    self.pageData.total = Number(res.data.data.total);
+                    self.tableData = res.data.data.data;
+                }
+            }).catch(function (error) {
+                console.log(error);
+            });
         },
+        create: function create() {
+            //显示添加页面
+            var self = this;
+            self.formData = {
+                product: [{
+                    product_id: '',
+                    quantity: '',
+                    price: ''
+                }],
+                created_user: sessionStorage.getItem('username'),
+                category_id: self.category_id
 
-        /**
-         * 显示修改菜单视图
-          * @param node 菜单节点
-         */
-        nodeEditVisible: function nodeEditVisible(node) {
-            this.methodType = 0;
-            this.dialogName = '修改菜单';
-            this.dialogFormVisible = true;
-            this.nodeFormData = node.data;
-            this.nodeFormData.display = String(this.nodeFormData.display);
-        },
-
-
-        /**
-         * 显示添加菜单视图
-         * @param node 父级菜单节点
-         */
-        nodeCreateVisible: function nodeCreateVisible(node) {
-            this.methodType = 1;
-            this.dialogName = '添加菜单';
-            this.dialogFormVisible = true;
-            this.nodeFormData = {
-                display_name: '',
-                name: '',
-                icon: '',
-                description: '',
-                pid: node.data.id,
-                display: '1'
             };
+
+            self.methodType = 1; //设置请求方法为添加
+            self.dialogTitle = '新增出库信息';
+
+            self.dialogFormVisible = true;
         },
-
-
-        /**
-         * 保存菜单
-         */
-        nodeStore: function nodeStore() {
+        store: function store(formName) {
+            //保存数据
             var self = this;
-            self.$axios.post(self.currentUrl, self.nodeFormData).then(function (res) {
-                if (res.data.code == 1000) {
-                    self.dialogFormVisible = false;
-                    self.$message.success('菜单添加成功');
+            self.$refs[formName].validate(function (valid) {
+                if (valid) {
+                    self.$emit('showLoading');
 
-                    self.getMenu();
+                    self.$axios.post(self.currentUrl, self.formData).then(function (res) {
+                        self.$emit('showLoading');
+
+                        if (res.data.code == 1000) {
+                            self.dialogFormVisible = false;
+                            self.dialogMoneyVisible = false;
+                            self.$message.success('添加成功');
+                            self.getData();
+                        } else {
+                            self.$message.error(res.data.msg);
+                        }
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
                 } else {
-                    self.$message({ message: res.data.msg, type: 'error' });
+                    return false;
                 }
-            }).catch(function (error) {
-
-                console.log(error);
             });
         },
-
-        /**
-         * 更新菜单
-         */
-        nodeUpdate: function nodeUpdate() {
+        edit: function edit(index, row) {
+            //显示编辑视图
             var self = this;
-            self.nodeFormData._method = 'put';
-            self.$axios.post(self.currentUrl + '/' + self.nodeFormData.id, self.nodeFormData).then(function (res) {
-                if (res.data.code == 1000) {
-                    self.dialogFormVisible = false;
-                    self.$message.success('菜单更新成功');
-                    self.getMenu();
+            self.formData = Object.assign({}, row);
+            self.formData.taxation = String(self.formData.taxation);
+            self.dialogTitle = '编辑出库信息';
+
+            self.methodType = 0; //设置请求方法为修改
+            self.dialogFormVisible = true;
+        },
+        update: function update(formName) {
+            //更新数据
+            var self = this;
+            self.$refs[formName].validate(function (valid) {
+                if (valid) {
+                    self.$emit('showLoading');
+                    self.formData._method = 'PUT';
+                    self.formData.category_id = self.category_id;
+                    self.$axios.post(self.currentUrl + '/' + self.formData.id, self.formData).then(function (res) {
+                        self.$emit('showLoading');
+
+                        if (res.data.code == 1000) {
+                            self.formData = {};
+                            self.dialogFormVisible = false;
+                            self.dialogMoneyVisible = false;
+                            self.$message.success('编辑成功');
+                            self.getData();
+                        } else {
+                            self.$message.error(res.data.msg);
+                        }
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
                 } else {
-                    self.$message.error(res.data.msg);
+                    return false;
                 }
-            }).catch(function (error) {
-                console.log(error);
             });
         },
-
-        /**
-         *
-         * 删除菜单
-         * @param node
-         */
-        nodeDelete: function nodeDelete(node) {
+        destroy: function destroy(row) {
+            //删除
             var self = this;
 
             this.$confirm('删除后不可恢复, 是否继续?', '提示', {
@@ -235,138 +652,131 @@ exports.default = {
                 cancelButtonText: '取消',
                 type: 'warning'
             }).then(function () {
-                self.$axios.post(self.currentUrl + '/' + node.data.id, { _method: 'delete' }).then(function (res) {
+                self.$emit('showLoading');
+                self.$axios.post(self.currentUrl + '/' + row.id, { _method: 'delete' }).then(function (res) {
+                    self.$emit('showLoading');
 
                     if (res.data.code == 1000) {
-                        self.$message({
-                            type: 'success',
-                            message: '删除成功!'
-                        });
-                        self.getMenu();
+                        self.$message.success('删除成功');
+                        self.getData();
                     } else {
-                        self.$message({
-                            type: 'error',
-                            message: res.data.msg
-                        });
+                        self.$message.error('删除失败');
                     }
                 }).catch(function (error) {
                     console.log(error);
                 });
             }).catch(function () {
-                this.$message({
+                self.$message({
                     type: 'info',
                     message: '已取消删除'
                 });
             });
         },
-        renderContent: function renderContent(h, _ref) {
-            var _this = this;
-
-            var node = _ref.node,
-                data = _ref.data,
-                store = _ref.store;
-
-
-            if (data.id) {
-                return h('span', [h(
-                    'span',
-                    {
-                        on: {
-                            'click': function click() {
-                                return _this.nodeExpand(node);
-                            }
-                        }
-                    },
-                    [h('span', [node.label])]
-                ), h(
-                    'span',
-                    { style: 'float: right; margin-right: 20px' },
-                    [h(
-                        'el-button',
-                        {
-                            attrs: { size: 'mini' },
-                            on: {
-                                'click': function click() {
-                                    return _this.nodeCreateVisible(node);
-                                }
-                            }
-                        },
-                        ['\u65B0\u589E']
-                    ), h(
-                        'el-button',
-                        {
-                            attrs: { size: 'mini' },
-                            on: {
-                                'click': function click() {
-                                    return _this.nodeEditVisible(node);
-                                }
-                            }
-                        },
-                        ['\u4FEE\u6539']
-                    ), h(
-                        'el-button',
-                        {
-                            attrs: { size: 'mini' },
-                            on: {
-                                'click': function click() {
-                                    return _this.nodeDelete(node);
-                                }
-                            }
-                        },
-                        ['\u5220\u9664']
-                    )]
-                )]);
+        filterData: function filterData() {
+            //搜索
+            this.getData(this.filters);
+        },
+        handleSizeChange: function handleSizeChange(val) {
+            //改变每页条数
+            this.pageData.per_page = val;
+            this.getData(this.filters);
+        },
+        handleCurrentChange: function handleCurrentChange(val) {
+            //翻页
+            this.pageData.page = val;
+            this.getData();
+        },
+        reset: function reset() {
+            //重置搜索表单
+            this.filters = {};
+            this.getData();
+        },
+        getProducts: function getProducts() {
+            var self = this;
+            self.$axios.get(self.$adminPath + 'product', { params: { all: true, category_id: self.category_id } }).then(function (res) {
+                if (res.data.code == 1000) {
+                    self.products = res.data.data;
+                }
+            }).catch(function (err) {
+                console.log(err);
+            });
+        },
+        getBusiness: function getBusiness() {
+            var self = this;
+            self.$axios.get(self.$adminPath + 'business', { params: { all: true } }).then(function (res) {
+                if (res.data.code == 1000) {
+                    self.business = res.data.data;
+                }
+            }).catch(function (err) {
+                console.log(err);
+            });
+        },
+        handleRemove: function handleRemove(file, fileList) {
+            console.log(file, fileList);
+        },
+        handlePreview: function handlePreview(file) {
+            console.log(file);
+        },
+        handleUploadSuccess: function handleUploadSuccess(res, file) {
+            this.formData.appendix = res.data.url;
+            this.formData.appendix_name = res.data.name;
+        },
+        changeType: function changeType() {
+            var self = this;
+            if (self.formData.storage_type == 3) {
+                self.showContract = 'display:block;';
             } else {
-                return h('span', [h('span', [h('span', [node.label])]), h(
-                    'span',
-                    { style: 'float: right; margin-right: 20px' },
-                    [h(
-                        'el-button',
-                        {
-                            attrs: { size: 'mini' },
-                            on: {
-                                'click': function click() {
-                                    return _this.nodeCreateVisible(node);
-                                }
-                            }
-                        },
-                        ['\u65B0\u589E']
-                    )]
-                )]);
+                self.showContract = 'display:none;';
             }
         },
-        getMenu: function getMenu() {
+        expandData: function expandData(row, expanded) {
+            this.productsDetail = row.product;
+        },
+        showProduct: function showProduct() {
             var self = this;
-
-            self.$axios.get(self.$adminPath + 'permission').then(function (res) {
-                self.$store.dispatch('setMenus', res.data.data);
-                self.menus[0].children = res.data.data;
-            }).catch(function (error) {
-                console.log(error);
+            self.dialogProductVisible = true;
+        },
+        addProduct: function addProduct() {
+            this.formData.product.push({
+                product_id: "",
+                price: '',
+                quantity: ''
             });
         },
-        refurbishMenu: function refurbishMenu() {
-            this.getMenu();
-        },
-        getCategory: function getCategory() {
+        editDate: function editDate(index, row, type) {
             var self = this;
+            self.formData = Object.assign({}, row);
+            self.formData.taxation = String(self.formData.taxation);
 
-            self.$axios.get(self.$adminPath + 'category?old=1').then(function (res) {
-                self.category = res.data.data;
-            }).catch(function (error) {
-                console.log(error);
-            });
+            self.methodType = 0; //设置请求方法为修改
+            self.dialogMoneyVisible = true;
+        },
+        formatTime: function formatTime(val) {
+            this.formData.created_at = val;
+        },
+        fmoney: function fmoney(s, n) {
+            n = n > 0 && n <= 20 ? n : 2;
+            s = parseFloat((s + "").replace(/[^\d\.-]/g, "")).toFixed(n) + "";
+            var l = s.split(".")[0].split("").reverse(),
+                r = s.split(".")[1];
+            var t = "";
+            for (var i = 0; i < l.length; i++) {
+                t += l[i] + ((i + 1) % 3 == 0 && i + 1 != l.length ? "," : "");
+            }
+            return t.split("").reverse().join("") + "." + r;
         }
     },
     mounted: function mounted() {
-        this.getMenu();
-        this.getCategory();
+        this.getBusiness();
+        this.category_id = this.$route.query.category;
+        this.getProducts();
+        this.getData();
     }
 };
 
 /***/ }),
 
-/***/ 705:
+/***/ 746:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -376,154 +786,580 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("el-tree", {
-        staticStyle: { width: "800px" },
-        attrs: {
-          data: _vm.menus,
-          props: _vm.defaultProps,
-          "node-key": "id",
-          "default-expand-all": "",
-          "expand-on-click-node": false,
-          "render-content": _vm.renderContent
-        }
-      }),
+      _c(
+        "el-col",
+        {
+          staticClass: "toolbar",
+          staticStyle: { "padding-bottom": "0px" },
+          attrs: { span: 24 }
+        },
+        [
+          _c(
+            "el-form",
+            { attrs: { inline: true, model: _vm.filters } },
+            [
+              _c(
+                "el-form-item",
+                { attrs: { label: "合同编号" } },
+                [
+                  _c("el-input", {
+                    attrs: { "auto-complete": "off" },
+                    model: {
+                      value: _vm.filters.contract,
+                      callback: function($$v) {
+                        _vm.$set(_vm.filters, "contract", $$v)
+                      },
+                      expression: "filters.contract"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                { attrs: { label: "出库类型" } },
+                [
+                  _c(
+                    "el-select",
+                    {
+                      attrs: { placeholder: "请选择出库类型" },
+                      model: {
+                        value: _vm.filters.outgoing_type,
+                        callback: function($$v) {
+                          _vm.$set(_vm.filters, "outgoing_type", $$v)
+                        },
+                        expression: "filters.outgoing_type"
+                      }
+                    },
+                    _vm._l(_vm.types, function(item) {
+                      return _c("el-option", {
+                        key: item.id,
+                        attrs: { label: item.name, value: item.id }
+                      })
+                    })
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                [
+                  _c(
+                    "el-button",
+                    {
+                      attrs: { type: "primary" },
+                      on: {
+                        click: function($event) {
+                          _vm.filterData()
+                        }
+                      }
+                    },
+                    [_vm._v("查询")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                [
+                  _c(
+                    "el-button",
+                    {
+                      attrs: { type: "warning" },
+                      on: {
+                        click: function($event) {
+                          _vm.reset()
+                        }
+                      }
+                    },
+                    [_vm._v("重置")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                [
+                  _c(
+                    "el-button",
+                    {
+                      attrs: { type: "primary" },
+                      on: {
+                        click: function($event) {
+                          _vm.create()
+                        }
+                      }
+                    },
+                    [_vm._v("新增")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "el-table",
+        {
+          staticStyle: { width: "100%" },
+          attrs: { data: _vm.tableData },
+          on: { expand: _vm.expandData }
+        },
+        [
+          _c("el-table-column", {
+            attrs: { type: "expand" },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(props) {
+                  return [
+                    _c(
+                      "el-form",
+                      {
+                        staticClass: "demo-table-expand",
+                        attrs: { "label-position": "left", inline: "" }
+                      },
+                      [
+                        _c("el-form-item", { attrs: { label: "出库时间" } }, [
+                          _c("span", [_vm._v(_vm._s(props.row.created_at))])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "类型" } }, [
+                          _c("span", [
+                            _vm._v(_vm._s(props.row.outgoing_type_zh))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "合同编号" } }, [
+                          _c("span", [
+                            _vm._v(_vm._s(props.row.contract_number))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "商家名称" } }, [
+                          _c("span", [
+                            _vm._v(_vm._s(props.row.business.business_name))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "出库地点" } }, [
+                          _c("span", [
+                            _vm._v(_vm._s(props.row.outgoing_address))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "出库金额" } }, [
+                          _c("span", [_vm._v(_vm._s(props.row.outgoing_money))])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "增值税" } }, [
+                          _c("span", [
+                            _vm._v(_vm._s(props.row.value_added_tax))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "3%代扣税" } }, [
+                          _c("span", [
+                            _vm._v(_vm._s(props.row.withholding_tax))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "应收金额" } }, [
+                          _c("span", [
+                            _vm._v(_vm._s(props.row.receivable_money))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "备注" } }, [
+                          _c("span", [_vm._v(_vm._s(props.row.content))])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "经办人" } }, [
+                          _c("span", [_vm._v(_vm._s(props.row.created_user))])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "附件" } }, [
+                          _c("span", [_vm._v(_vm._s(props.row.appendix_name))])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "el-form-item",
+                          { attrs: { label: "产品信息" } },
+                          [
+                            _c(
+                              "el-button",
+                              {
+                                attrs: { size: "small" },
+                                on: { click: _vm.showProduct }
+                              },
+                              [_vm._v("查看产品信息")]
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ]
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "created_at",
+              label: "出库时间",
+              align: "center",
+              width: "240"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return [
+                    _c("span", [_vm._v(_vm._s(scope.row.created_at))]),
+                    _vm._v(" "),
+                    _c(
+                      "el-button",
+                      {
+                        attrs: { size: "small" },
+                        on: {
+                          click: function($event) {
+                            _vm.editDate(scope.$index, scope.row, 2)
+                          }
+                        }
+                      },
+                      [_vm._v("编辑")]
+                    )
+                  ]
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "outgoing_type_zh",
+              label: "类型",
+              align: "center",
+              width: "100"
+            }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "contract_number",
+              label: "合同编号",
+              align: "center"
+            }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "business.business_name",
+              label: "商家名称",
+              align: "center",
+              width: "200"
+            }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "product",
+              label: "产品名称",
+              align: "center",
+              width: "400"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return _vm._l(scope.row.product, function(item) {
+                    return _c("span", [
+                      _vm._v(_vm._s(item.product.name)),
+                      _c("br")
+                    ])
+                  })
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "outgoing_quantity",
+              label: "产品数量",
+              align: "center",
+              width: "120"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return _vm._l(scope.row.product, function(item) {
+                    return _c("span", [
+                      _vm._v(_vm._s(item.outgoing_quantity)),
+                      _c("br")
+                    ])
+                  })
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "outgoing_quantity",
+              label: "产品价格",
+              align: "center",
+              width: "120"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return _vm._l(scope.row.product, function(item) {
+                    return _c("span", [
+                      _vm._v(_vm._s(_vm.fmoney(item.product_price))),
+                      _c("br")
+                    ])
+                  })
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "outgoing_quantity",
+              label: "产品单位",
+              align: "center",
+              width: "120"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return _vm._l(scope.row.product, function(item) {
+                    return _c("span", [
+                      _vm._v(_vm._s(item.product.metering_unit)),
+                      _c("br")
+                    ])
+                  })
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "outgoing_address",
+              label: "出库地点",
+              align: "center"
+            }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "outgoing_money",
+              label: "出库金额",
+              align: "center",
+              width: "150"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return [
+                    _c("span", [
+                      _vm._v(_vm._s(_vm.fmoney(scope.row.outgoing_money, 2))),
+                      _c("br")
+                    ])
+                  ]
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "value_added_tax",
+              label: "增值税",
+              align: "center",
+              width: "150"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return [
+                    _c("span", [
+                      _vm._v(_vm._s(_vm.fmoney(scope.row.value_added_tax, 2))),
+                      _c("br")
+                    ])
+                  ]
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "withholding_tax",
+              label: "3%代扣税",
+              align: "center",
+              width: "150"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return [
+                    _c("span", [
+                      _vm._v(_vm._s(_vm.fmoney(scope.row.withholding_tax, 2))),
+                      _c("br")
+                    ])
+                  ]
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "receivable_money",
+              label: "应收金额",
+              align: "center",
+              width: "150"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return [
+                    _c("span", [
+                      _vm._v(_vm._s(_vm.fmoney(scope.row.receivable_money, 2))),
+                      _c("br")
+                    ])
+                  ]
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "content",
+              label: "备注",
+              align: "center",
+              width: "400"
+            }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: { prop: "created_user", label: "经办人", align: "center" }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: { label: "操作", align: "center" },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return [
+                    _c(
+                      "el-button",
+                      {
+                        attrs: { size: "small" },
+                        on: {
+                          click: function($event) {
+                            _vm.edit(scope.$index, scope.row)
+                          }
+                        }
+                      },
+                      [_vm._v("编辑")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "el-button",
+                      {
+                        attrs: { size: "small", type: "danger" },
+                        on: {
+                          click: function($event) {
+                            _vm.destroy(scope.row)
+                          }
+                        }
+                      },
+                      [_vm._v("删除")]
+                    )
+                  ]
+                }
+              }
+            ])
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      [
+        _c(
+          "div",
+          { staticClass: "block", staticStyle: { float: "right" } },
+          [
+            _c("el-pagination", {
+              attrs: {
+                "current-page": _vm.pageData.page,
+                "page-sizes": [10, 15, 30, 50],
+                "page-size": _vm.pageData.per_page,
+                layout: "total, sizes, prev, pager, next, jumper",
+                total: _vm.pageData.total
+              },
+              on: {
+                "size-change": _vm.handleSizeChange,
+                "current-change": _vm.handleCurrentChange
+              }
+            })
+          ],
+          1
+        )
+      ],
       _vm._v(" "),
       _c(
         "el-dialog",
         {
-          attrs: { title: _vm.dialogName, visible: _vm.dialogFormVisible },
+          attrs: { title: _vm.dialogTitle, visible: _vm.dialogFormVisible },
           on: {
             "update:visible": function($event) {
               _vm.dialogFormVisible = $event
-            },
-            close: _vm.refurbishMenu
+            }
           }
         },
         [
           _c(
             "el-form",
-            { attrs: { model: _vm.nodeFormData } },
+            {
+              ref: "ruleForm",
+              attrs: {
+                model: _vm.formData,
+                rules: _vm.rules,
+                "label-width": _vm.formLabelWidth
+              }
+            },
             [
               _c(
                 "el-form-item",
                 {
                   attrs: {
-                    label: "菜单路由",
-                    "label-width": _vm.formLabelWidth
-                  }
-                },
-                [
-                  _c("el-input", {
-                    attrs: { "auto-complete": "off" },
-                    model: {
-                      value: _vm.nodeFormData.name,
-                      callback: function($$v) {
-                        _vm.$set(_vm.nodeFormData, "name", $$v)
-                      },
-                      expression: "nodeFormData.name"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "el-form-item",
-                {
-                  attrs: {
-                    label: "菜单名称",
-                    "label-width": _vm.formLabelWidth
-                  }
-                },
-                [
-                  _c("el-input", {
-                    attrs: { "auto-complete": "off" },
-                    model: {
-                      value: _vm.nodeFormData.display_name,
-                      callback: function($$v) {
-                        _vm.$set(_vm.nodeFormData, "display_name", $$v)
-                      },
-                      expression: "nodeFormData.display_name"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "el-form-item",
-                {
-                  attrs: {
-                    label: "菜单图标",
-                    "label-width": _vm.formLabelWidth
-                  }
-                },
-                [
-                  _c("el-input", {
-                    attrs: { "auto-complete": "off" },
-                    model: {
-                      value: _vm.nodeFormData.icon,
-                      callback: function($$v) {
-                        _vm.$set(_vm.nodeFormData, "icon", $$v)
-                      },
-                      expression: "nodeFormData.icon"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "el-form-item",
-                {
-                  attrs: {
-                    label: "菜单描述",
-                    "label-width": _vm.formLabelWidth
-                  }
-                },
-                [
-                  _c("el-input", {
-                    attrs: { "auto-complete": "off" },
-                    model: {
-                      value: _vm.nodeFormData.description,
-                      callback: function($$v) {
-                        _vm.$set(_vm.nodeFormData, "description", $$v)
-                      },
-                      expression: "nodeFormData.description"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "el-form-item",
-                {
-                  attrs: {
-                    label: "菜单排序",
-                    "label-width": _vm.formLabelWidth
-                  }
-                },
-                [
-                  _c("el-input", {
-                    attrs: { "auto-complete": "off" },
-                    model: {
-                      value: _vm.nodeFormData.sort,
-                      callback: function($$v) {
-                        _vm.$set(_vm.nodeFormData, "sort", $$v)
-                      },
-                      expression: "nodeFormData.sort"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "el-form-item",
-                {
-                  attrs: {
-                    label: "菜单分类",
+                    label: "出库类型",
                     "label-width": _vm.formLabelWidth
                   }
                 },
@@ -531,16 +1367,19 @@ var render = function() {
                   _c(
                     "el-select",
                     {
-                      attrs: { placeholder: "请选择" },
+                      attrs: {
+                        change: _vm.changeType(),
+                        placeholder: "请选择出库类型"
+                      },
                       model: {
-                        value: _vm.nodeFormData.category_id,
+                        value: _vm.formData.outgoing_type,
                         callback: function($$v) {
-                          _vm.$set(_vm.nodeFormData, "category_id", $$v)
+                          _vm.$set(_vm.formData, "outgoing_type", $$v)
                         },
-                        expression: "nodeFormData.category_id"
+                        expression: "formData.outgoing_type"
                       }
                     },
-                    _vm._l(_vm.category, function(item) {
+                    _vm._l(_vm.types, function(item) {
                       return _c("el-option", {
                         key: item.id,
                         attrs: { label: item.name, value: item.id }
@@ -555,24 +1394,439 @@ var render = function() {
                 "el-form-item",
                 {
                   attrs: {
-                    label: "是否显示",
+                    label: "商家名称",
                     "label-width": _vm.formLabelWidth
                   }
                 },
                 [
-                  _c("el-switch", {
+                  _c(
+                    "el-select",
+                    {
+                      staticStyle: { width: "420px" },
+                      attrs: { placeholder: "请选择商家名称" },
+                      model: {
+                        value: _vm.formData.business_id,
+                        callback: function($$v) {
+                          _vm.$set(_vm.formData, "business_id", $$v)
+                        },
+                        expression: "formData.business_id"
+                      }
+                    },
+                    _vm._l(_vm.business, function(item) {
+                      return _c("el-option", {
+                        key: item.id,
+                        attrs: { label: item.business_name, value: item.id }
+                      })
+                    })
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _vm._l(_vm.formData.product, function(val, index) {
+                return _c(
+                  "div",
+                  [
+                    _c(
+                      "el-form-item",
+                      {
+                        attrs: {
+                          label: "产品名称",
+                          "label-width": _vm.formLabelWidth
+                        }
+                      },
+                      [
+                        _c(
+                          "el-select",
+                          {
+                            staticStyle: { width: "420px" },
+                            attrs: { placeholder: "请选择产品" },
+                            model: {
+                              value: val.product_id,
+                              callback: function($$v) {
+                                _vm.$set(val, "product_id", $$v)
+                              },
+                              expression: "val.product_id"
+                            }
+                          },
+                          _vm._l(_vm.products, function(item) {
+                            return _c("el-option", {
+                              key: item.id,
+                              attrs: { label: item.name, value: item.id }
+                            })
+                          })
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "el-form-item",
+                      {
+                        attrs: {
+                          label: "出库数量",
+                          "label-width": _vm.formLabelWidth
+                        }
+                      },
+                      [
+                        _c("el-input", {
+                          attrs: { "auto-complete": "off" },
+                          model: {
+                            value: val.outgoing_quantity,
+                            callback: function($$v) {
+                              _vm.$set(val, "outgoing_quantity", $$v)
+                            },
+                            expression: "val.outgoing_quantity"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "el-form-item",
+                      {
+                        attrs: {
+                          label: "货物单价",
+                          "label-width": _vm.formLabelWidth
+                        }
+                      },
+                      [
+                        _c("el-input", {
+                          attrs: { "auto-complete": "off" },
+                          model: {
+                            value: val.product_price,
+                            callback: function($$v) {
+                              _vm.$set(val, "product_price", $$v)
+                            },
+                            expression: "val.product_price"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("hr")
+                  ],
+                  1
+                )
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticStyle: { "margin-bottom": "20px" } },
+                [
+                  _c(
+                    "el-form-item",
+                    [
+                      _c(
+                        "el-button",
+                        {
+                          staticStyle: { float: "right" },
+                          attrs: { type: "primary" },
+                          on: { click: _vm.addProduct }
+                        },
+                        [_vm._v("添加商品")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                {
+                  attrs: { label: "申请人", "label-width": _vm.formLabelWidth }
+                },
+                [
+                  _c("el-input", {
                     attrs: {
-                      "on-text": "显示",
-                      "on-value": "1",
-                      "off-text": "隐藏",
-                      "off-value": "0"
+                      "auto-complete": "off",
+                      placeholder: "请输入申请人"
                     },
                     model: {
-                      value: _vm.nodeFormData.display,
+                      value: _vm.formData.created_user,
                       callback: function($$v) {
-                        _vm.$set(_vm.nodeFormData, "display", $$v)
+                        _vm.$set(_vm.formData, "created_user", $$v)
                       },
-                      expression: "nodeFormData.display"
+                      expression: "formData.created_user"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                {
+                  attrs: {
+                    label: "合同编号",
+                    "label-width": _vm.formLabelWidth
+                  }
+                },
+                [
+                  _c("el-input", {
+                    attrs: {
+                      "auto-complete": "off",
+                      placeholder: "请输入合同编号"
+                    },
+                    model: {
+                      value: _vm.formData.contract_number,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formData, "contract_number", $$v)
+                      },
+                      expression: "formData.contract_number"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                { attrs: { label: "税费", "label-width": _vm.formLabelWidth } },
+                [
+                  _c(
+                    "el-radio-group",
+                    {
+                      model: {
+                        value: _vm.formData.taxation,
+                        callback: function($$v) {
+                          _vm.$set(_vm.formData, "taxation", $$v)
+                        },
+                        expression: "formData.taxation"
+                      }
+                    },
+                    [
+                      _c("el-radio", { attrs: { label: "1" } }, [_vm._v("无")]),
+                      _vm._v(" "),
+                      _c("el-radio", { attrs: { label: "2" } }, [
+                        _vm._v("增值税")
+                      ]),
+                      _vm._v(" "),
+                      _c("el-radio", { attrs: { label: "3" } }, [
+                        _vm._v("增值税加3%代扣税")
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                {
+                  attrs: {
+                    label: "出库地点",
+                    "label-width": _vm.formLabelWidth
+                  }
+                },
+                [
+                  _c("el-input", {
+                    attrs: { "auto-complete": "off" },
+                    model: {
+                      value: _vm.formData.outgoing_address,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formData, "outgoing_address", $$v)
+                      },
+                      expression: "formData.outgoing_address"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                {
+                  attrs: {
+                    label: "出库备注",
+                    "label-width": _vm.formLabelWidth
+                  }
+                },
+                [
+                  _c("el-input", {
+                    attrs: { type: "textarea", "auto-complete": "off" },
+                    model: {
+                      value: _vm.formData.content,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formData, "content", $$v)
+                      },
+                      expression: "formData.content"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                { attrs: { label: "出库附件" } },
+                [
+                  _c(
+                    "el-upload",
+                    {
+                      staticClass: "upload-storage-appendix",
+                      attrs: {
+                        "on-preview": _vm.handlePreview,
+                        "on-remove": _vm.handleRemove,
+                        action: _vm.$adminPath + "appendix",
+                        "on-success": _vm.handleUploadSuccess,
+                        "file-list": _vm.fileList
+                      }
+                    },
+                    [
+                      _c(
+                        "el-button",
+                        { attrs: { size: "small", type: "primary" } },
+                        [_vm._v("点击上传")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "dialog-footer",
+              attrs: { slot: "footer" },
+              slot: "footer"
+            },
+            [
+              _c(
+                "el-button",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.dialogFormVisible = false
+                    }
+                  }
+                },
+                [_vm._v("取 消")]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-button",
+                {
+                  attrs: { type: "primary" },
+                  on: {
+                    click: function($event) {
+                      _vm.methodType
+                        ? _vm.store("ruleForm")
+                        : _vm.update("ruleForm")
+                    }
+                  }
+                },
+                [_vm._v("确 定")]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "el-dialog",
+        {
+          attrs: { title: "产品信息", visible: _vm.dialogProductVisible },
+          on: {
+            "update:visible": function($event) {
+              _vm.dialogProductVisible = $event
+            }
+          }
+        },
+        [
+          _c(
+            "el-table",
+            {
+              staticStyle: { width: "100%" },
+              attrs: { data: _vm.productsDetail }
+            },
+            [
+              _c("el-table-column", {
+                attrs: {
+                  prop: "product.name",
+                  label: "产品名称",
+                  align: "center"
+                }
+              }),
+              _vm._v(" "),
+              _c("el-table-column", {
+                attrs: {
+                  prop: "outgoing_quantity",
+                  label: "产品数量",
+                  align: "center"
+                }
+              }),
+              _vm._v(" "),
+              _c("el-table-column", {
+                attrs: {
+                  prop: "product_price",
+                  label: "产品单价",
+                  align: "center"
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "el-dialog",
+        {
+          attrs: { title: "出库时间", visible: _vm.dialogMoneyVisible },
+          on: {
+            "update:visible": function($event) {
+              _vm.dialogMoneyVisible = $event
+            }
+          }
+        },
+        [
+          _c(
+            "el-form",
+            {
+              ref: "ruleForm",
+              attrs: {
+                model: _vm.formData,
+                rules: _vm.rules,
+                "label-width": _vm.formLabelWidth
+              }
+            },
+            [
+              _c(
+                "el-form-item",
+                {
+                  attrs: {
+                    label: "出库时间",
+                    "label-width": _vm.formLabelWidth
+                  }
+                },
+                [
+                  _c("el-date-picker", {
+                    attrs: { type: "datetime", placeholder: "选择收款时间" },
+                    on: { change: _vm.formatTime },
+                    model: {
+                      value: _vm.formData.created_at,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formData, "created_at", $$v)
+                      },
+                      expression: "formData.created_at"
                     }
                   })
                 ],
@@ -595,8 +1849,7 @@ var render = function() {
                 {
                   on: {
                     click: function($event) {
-                      _vm.dialogFormVisible = false
-                      _vm.nodeFormData = {}
+                      _vm.dialogMoneyVisible = false
                     }
                   }
                 },
@@ -609,11 +1862,13 @@ var render = function() {
                   attrs: { type: "primary" },
                   on: {
                     click: function($event) {
-                      _vm.methodType ? _vm.nodeStore() : _vm.nodeUpdate()
+                      _vm.methodType
+                        ? _vm.store("ruleForm")
+                        : _vm.update("ruleForm")
                     }
                   }
                 },
-                [_vm._v(" 确 定")]
+                [_vm._v("确 定")]
               )
             ],
             1
@@ -622,7 +1877,7 @@ var render = function() {
         1
       )
     ],
-    1
+    2
   )
 }
 var staticRenderFns = []
@@ -631,7 +1886,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-06e9294c", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-24fbd26c", module.exports)
   }
 }
 

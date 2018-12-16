@@ -52,23 +52,39 @@
 					</li>
 				</ul>
 			</aside>
-			<section class="content-container">
-				<div class="grid-content bg-purple-light">
-					<el-col :span="24" class="breadcrumb-container">
-						<strong class="title">{{$route.name}}</strong>
+			<!--<section class="content-container">-->
+				<!--<div class="grid-content bg-purple-light">-->
+					<!--<el-col :span="24" class="breadcrumb-container">-->
+						<!--<strong class="title">{{$route.name}}</strong>-->
+						<!--<el-breadcrumb separator="/" class="breadcrumb-inner">-->
+							<!--<el-breadcrumb-item v-for="item in $route.matched" :key="item.path">-->
+								<!--{{ item.name }}-->
+							<!--</el-breadcrumb-item>-->
+						<!--</el-breadcrumb>-->
+					<!--</el-col>-->
+					<!--<el-col :span="24" class="content-wrapper">-->
+						<!--<transition name="fade" mode="out-in">-->
+							<!--<router-view @showLoading="showLoading"></router-view>-->
+						<!--</transition>-->
+					<!--</el-col>-->
+				<!--</div>-->
+			<!--</section>-->
+
+			<el-card style="width: 100%; height: auto; overflow-y: auto">
+				<div slot="header" class="clearfix">
+					<span>{{$route.name}}</span>
+					<span style="float: right; padding: 3px 0" type="text">
 						<el-breadcrumb separator="/" class="breadcrumb-inner">
 							<el-breadcrumb-item v-for="item in $route.matched" :key="item.path">
 								{{ item.name }}
 							</el-breadcrumb-item>
 						</el-breadcrumb>
-					</el-col>
-					<el-col :span="24" class="content-wrapper">
-						<transition name="fade" mode="out-in">
-							<router-view @showLoading="showLoading"></router-view>
-						</transition>
-					</el-col>
+					</span>
 				</div>
-			</section>
+				<transition name="fade" mode="out-in">
+					<router-view @showLoading="showLoading"></router-view>
+				</transition>
+			</el-card>
 		</el-col>
 	</el-row>
 </template>
@@ -131,6 +147,7 @@
                 self.$axios.get(self.$adminPath+'getMenu')
 			        .then(function(res){
                         if(res.data.code == 1000){
+                            console.log(res.data.data);
                             self.$store.dispatch('setMenus',res.data.data);
                         }
 			    }).catch(function(error){

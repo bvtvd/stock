@@ -6,9 +6,9 @@ webpackJsonp([14],{
 var disposed = false
 var normalizeComponent = __webpack_require__(45)
 /* script */
-var __vue_script__ = __webpack_require__(708)
+var __vue_script__ = __webpack_require__(709)
 /* template */
-var __vue_template__ = __webpack_require__(709)
+var __vue_template__ = __webpack_require__(710)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 708:
+/***/ 709:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57,6 +57,12 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -366,7 +372,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 709:
+/***/ 710:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -376,244 +382,262 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("el-tree", {
-        staticStyle: { width: "800px" },
-        attrs: {
-          data: _vm.menus,
-          props: _vm.defaultProps,
-          "node-key": "id",
-          "default-expand-all": "",
-          "expand-on-click-node": false,
-          "render-content": _vm.renderContent
-        }
-      }),
-      _vm._v(" "),
       _c(
-        "el-dialog",
-        {
-          attrs: { title: _vm.dialogName, visible: _vm.dialogFormVisible },
-          on: {
-            "update:visible": function($event) {
-              _vm.dialogFormVisible = $event
-            },
-            close: _vm.refurbishMenu
-          }
-        },
+        "el-row",
         [
           _c(
-            "el-form",
-            { attrs: { model: _vm.nodeFormData } },
+            "el-col",
+            { attrs: { span: 24 } },
             [
-              _c(
-                "el-form-item",
-                {
-                  attrs: {
-                    label: "菜单路由",
-                    "label-width": _vm.formLabelWidth
-                  }
-                },
-                [
-                  _c("el-input", {
-                    attrs: { "auto-complete": "off" },
-                    model: {
-                      value: _vm.nodeFormData.name,
-                      callback: function($$v) {
-                        _vm.$set(_vm.nodeFormData, "name", $$v)
-                      },
-                      expression: "nodeFormData.name"
-                    }
-                  })
-                ],
-                1
-              ),
+              _c("el-tree", {
+                staticStyle: { width: "800px" },
+                attrs: {
+                  data: _vm.menus,
+                  props: _vm.defaultProps,
+                  "node-key": "id",
+                  "default-expand-all": "",
+                  "expand-on-click-node": false,
+                  "render-content": _vm.renderContent
+                }
+              }),
               _vm._v(" "),
               _c(
-                "el-form-item",
+                "el-dialog",
                 {
                   attrs: {
-                    label: "菜单名称",
-                    "label-width": _vm.formLabelWidth
-                  }
-                },
-                [
-                  _c("el-input", {
-                    attrs: { "auto-complete": "off" },
-                    model: {
-                      value: _vm.nodeFormData.display_name,
-                      callback: function($$v) {
-                        _vm.$set(_vm.nodeFormData, "display_name", $$v)
-                      },
-                      expression: "nodeFormData.display_name"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "el-form-item",
-                {
-                  attrs: {
-                    label: "菜单图标",
-                    "label-width": _vm.formLabelWidth
-                  }
-                },
-                [
-                  _c("el-input", {
-                    attrs: { "auto-complete": "off" },
-                    model: {
-                      value: _vm.nodeFormData.icon,
-                      callback: function($$v) {
-                        _vm.$set(_vm.nodeFormData, "icon", $$v)
-                      },
-                      expression: "nodeFormData.icon"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "el-form-item",
-                {
-                  attrs: {
-                    label: "菜单描述",
-                    "label-width": _vm.formLabelWidth
-                  }
-                },
-                [
-                  _c("el-input", {
-                    attrs: { "auto-complete": "off" },
-                    model: {
-                      value: _vm.nodeFormData.description,
-                      callback: function($$v) {
-                        _vm.$set(_vm.nodeFormData, "description", $$v)
-                      },
-                      expression: "nodeFormData.description"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "el-form-item",
-                {
-                  attrs: {
-                    label: "菜单排序",
-                    "label-width": _vm.formLabelWidth
-                  }
-                },
-                [
-                  _c("el-input", {
-                    attrs: { "auto-complete": "off" },
-                    model: {
-                      value: _vm.nodeFormData.sort,
-                      callback: function($$v) {
-                        _vm.$set(_vm.nodeFormData, "sort", $$v)
-                      },
-                      expression: "nodeFormData.sort"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "el-form-item",
-                {
-                  attrs: {
-                    label: "菜单分类",
-                    "label-width": _vm.formLabelWidth
+                    title: _vm.dialogName,
+                    visible: _vm.dialogFormVisible
+                  },
+                  on: {
+                    "update:visible": function($event) {
+                      _vm.dialogFormVisible = $event
+                    },
+                    close: _vm.refurbishMenu
                   }
                 },
                 [
                   _c(
-                    "el-select",
-                    {
-                      attrs: { placeholder: "请选择" },
-                      model: {
-                        value: _vm.nodeFormData.category_id,
-                        callback: function($$v) {
-                          _vm.$set(_vm.nodeFormData, "category_id", $$v)
+                    "el-form",
+                    { attrs: { model: _vm.nodeFormData } },
+                    [
+                      _c(
+                        "el-form-item",
+                        {
+                          attrs: {
+                            label: "菜单路由",
+                            "label-width": _vm.formLabelWidth
+                          }
                         },
-                        expression: "nodeFormData.category_id"
-                      }
+                        [
+                          _c("el-input", {
+                            attrs: { "auto-complete": "off" },
+                            model: {
+                              value: _vm.nodeFormData.name,
+                              callback: function($$v) {
+                                _vm.$set(_vm.nodeFormData, "name", $$v)
+                              },
+                              expression: "nodeFormData.name"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "el-form-item",
+                        {
+                          attrs: {
+                            label: "菜单名称",
+                            "label-width": _vm.formLabelWidth
+                          }
+                        },
+                        [
+                          _c("el-input", {
+                            attrs: { "auto-complete": "off" },
+                            model: {
+                              value: _vm.nodeFormData.display_name,
+                              callback: function($$v) {
+                                _vm.$set(_vm.nodeFormData, "display_name", $$v)
+                              },
+                              expression: "nodeFormData.display_name"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "el-form-item",
+                        {
+                          attrs: {
+                            label: "菜单图标",
+                            "label-width": _vm.formLabelWidth
+                          }
+                        },
+                        [
+                          _c("el-input", {
+                            attrs: { "auto-complete": "off" },
+                            model: {
+                              value: _vm.nodeFormData.icon,
+                              callback: function($$v) {
+                                _vm.$set(_vm.nodeFormData, "icon", $$v)
+                              },
+                              expression: "nodeFormData.icon"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "el-form-item",
+                        {
+                          attrs: {
+                            label: "菜单描述",
+                            "label-width": _vm.formLabelWidth
+                          }
+                        },
+                        [
+                          _c("el-input", {
+                            attrs: { "auto-complete": "off" },
+                            model: {
+                              value: _vm.nodeFormData.description,
+                              callback: function($$v) {
+                                _vm.$set(_vm.nodeFormData, "description", $$v)
+                              },
+                              expression: "nodeFormData.description"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "el-form-item",
+                        {
+                          attrs: {
+                            label: "菜单排序",
+                            "label-width": _vm.formLabelWidth
+                          }
+                        },
+                        [
+                          _c("el-input", {
+                            attrs: { "auto-complete": "off" },
+                            model: {
+                              value: _vm.nodeFormData.sort,
+                              callback: function($$v) {
+                                _vm.$set(_vm.nodeFormData, "sort", $$v)
+                              },
+                              expression: "nodeFormData.sort"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "el-form-item",
+                        {
+                          attrs: {
+                            label: "菜单分类",
+                            "label-width": _vm.formLabelWidth
+                          }
+                        },
+                        [
+                          _c(
+                            "el-select",
+                            {
+                              attrs: { placeholder: "请选择" },
+                              model: {
+                                value: _vm.nodeFormData.category_id,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.nodeFormData, "category_id", $$v)
+                                },
+                                expression: "nodeFormData.category_id"
+                              }
+                            },
+                            _vm._l(_vm.category, function(item) {
+                              return _c("el-option", {
+                                key: item.id,
+                                attrs: { label: item.name, value: item.id }
+                              })
+                            })
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "el-form-item",
+                        {
+                          attrs: {
+                            label: "是否显示",
+                            "label-width": _vm.formLabelWidth
+                          }
+                        },
+                        [
+                          _c("el-switch", {
+                            attrs: {
+                              "on-text": "显示",
+                              "on-value": "1",
+                              "off-text": "隐藏",
+                              "off-value": "0"
+                            },
+                            model: {
+                              value: _vm.nodeFormData.display,
+                              callback: function($$v) {
+                                _vm.$set(_vm.nodeFormData, "display", $$v)
+                              },
+                              expression: "nodeFormData.display"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "dialog-footer",
+                      attrs: { slot: "footer" },
+                      slot: "footer"
                     },
-                    _vm._l(_vm.category, function(item) {
-                      return _c("el-option", {
-                        key: item.id,
-                        attrs: { label: item.name, value: item.id }
-                      })
-                    })
+                    [
+                      _c(
+                        "el-button",
+                        {
+                          on: {
+                            click: function($event) {
+                              _vm.dialogFormVisible = false
+                              _vm.nodeFormData = {}
+                            }
+                          }
+                        },
+                        [_vm._v("取 消")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "el-button",
+                        {
+                          attrs: { type: "primary" },
+                          on: {
+                            click: function($event) {
+                              _vm.methodType
+                                ? _vm.nodeStore()
+                                : _vm.nodeUpdate()
+                            }
+                          }
+                        },
+                        [_vm._v(" 确 定")]
+                      )
+                    ],
+                    1
                   )
                 ],
                 1
-              ),
-              _vm._v(" "),
-              _c(
-                "el-form-item",
-                {
-                  attrs: {
-                    label: "是否显示",
-                    "label-width": _vm.formLabelWidth
-                  }
-                },
-                [
-                  _c("el-switch", {
-                    attrs: {
-                      "on-text": "显示",
-                      "on-value": "1",
-                      "off-text": "隐藏",
-                      "off-value": "0"
-                    },
-                    model: {
-                      value: _vm.nodeFormData.display,
-                      callback: function($$v) {
-                        _vm.$set(_vm.nodeFormData, "display", $$v)
-                      },
-                      expression: "nodeFormData.display"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "dialog-footer",
-              attrs: { slot: "footer" },
-              slot: "footer"
-            },
-            [
-              _c(
-                "el-button",
-                {
-                  on: {
-                    click: function($event) {
-                      _vm.dialogFormVisible = false
-                      _vm.nodeFormData = {}
-                    }
-                  }
-                },
-                [_vm._v("取 消")]
-              ),
-              _vm._v(" "),
-              _c(
-                "el-button",
-                {
-                  attrs: { type: "primary" },
-                  on: {
-                    click: function($event) {
-                      _vm.methodType ? _vm.nodeStore() : _vm.nodeUpdate()
-                    }
-                  }
-                },
-                [_vm._v(" 确 定")]
               )
             ],
             1

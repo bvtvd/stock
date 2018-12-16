@@ -1,18 +1,18 @@
 webpackJsonp([22],{
 
-/***/ 701:
+/***/ 707:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(739)
+  __webpack_require__(767)
 }
 var normalizeComponent = __webpack_require__(45)
 /* script */
-var __vue_script__ = __webpack_require__(741)
+var __vue_script__ = __webpack_require__(769)
 /* template */
-var __vue_template__ = __webpack_require__(742)
+var __vue_template__ = __webpack_require__(770)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29,18 +29,18 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\views\\finished-outgoing.vue"
+Component.options.__file = "resources\\assets\\js\\views\\settlement.vue"
 
 /* hot reload */
 if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-24fbd26c", Component.options)
+    hotAPI.createRecord("data-v-7e4a1754", Component.options)
   } else {
-    hotAPI.reload("data-v-24fbd26c", Component.options)
+    hotAPI.reload("data-v-7e4a1754", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -52,23 +52,23 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 739:
+/***/ 767:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(740);
+var content = __webpack_require__(768);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(46)("69a09d22", content, false, {});
+var update = __webpack_require__(46)("0e207f92", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-24fbd26c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=styles&index=0!./finished-outgoing.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.11@css-loader/index.js!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-24fbd26c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=styles&index=0!./finished-outgoing.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7e4a1754\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./settlement.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7e4a1754\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./settlement.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -79,7 +79,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 740:
+/***/ 768:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(23)(false);
@@ -87,14 +87,14 @@ exports = module.exports = __webpack_require__(23)(false);
 
 
 // module
-exports.push([module.i, "\n.el-table .red-row {\n    background: #ff4d51;\n}\n.el-table .green-row {\n    background: #00ff00;\n}\n.upload-storage-appendix input[type=\"file\"] {\n    display: none;\n}\n.demo-table-expand {\n    font-size: 0;\n}\n.demo-table-expand label {\n    width: 90px;\n    color: #99a9bf;\n}\n.demo-table-expand .el-form-item {\n    margin-right: 0;\n    margin-bottom: 0;\n    width: 50%;\n}\n", ""]);
+exports.push([module.i, "\n.el-table .red-row {\n    background: #ff4d51;\n}\n.el-table .back-row {\n    background: #2ab27b;\n}\n.el-table .green-row {\n    background: #00ff00;\n}\n.upload-storage-appendix input[type=\"file\"] {\n    display: none;\n}\n.demo-table-expand {\n    font-size: 0;\n}\n.demo-table-expand label {\n    width: 90px;\n    color: #99a9bf;\n}\n.demo-table-expand .el-form-item {\n    margin-right: 0;\n    margin-bottom: 0;\n    width: 50%;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 741:
+/***/ 769:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -103,6 +103,185 @@ exports.push([module.i, "\n.el-table .red-row {\n    background: #ff4d51;\n}\n.e
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -397,6 +576,8 @@ exports.default = {
             }, //表单数据
             dialogFormVisible: false,
             dialogProductVisible: false,
+            dialogMoneyVisible: false,
+            dialogExcelVisible: false,
             formLabelWidth: '20%',
             filters: {}, //搜索
             dialogTitle: '新增出库信息', //标题
@@ -419,24 +600,76 @@ exports.default = {
             }, {
                 id: 3,
                 name: '调拨出库'
+            }, {
+                id: 4,
+                name: '退货入库'
             }],
             products: [],
             fileList: [],
             showContract: 'display:none;',
+            showMoney: 'display:none;',
+            showTime: 'display:none;',
             business: [],
             productsDetail: [],
-            category_id: ''
+            category_id: '',
+            Money: {
+                receivable_money: 0,
+                received_money: 0,
+                uncollected: 0
+            },
+            formExcel: {
+                number: '',
+                times: ''
+            },
+            pickerOptions2: {
+                shortcuts: [{
+                    text: '最近一周',
+                    onClick: function onClick(picker) {
+                        var end = new Date();
+                        var start = new Date();
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+                        picker.$emit('pick', [start, end]);
+                    }
+                }, {
+                    text: '最近一个月',
+                    onClick: function onClick(picker) {
+                        var end = new Date();
+                        var start = new Date();
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+                        picker.$emit('pick', [start, end]);
+                    }
+                }, {
+                    text: '最近三个月',
+                    onClick: function onClick(picker) {
+                        var end = new Date();
+                        var start = new Date();
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+                        picker.$emit('pick', [start, end]);
+                    }
+                }]
+            },
+            LabelWidth: '25%'
         };
     },
 
     methods: {
+        tableRowClassName: function tableRowClassName(row, rowIndex) {
+            if (row.outgoing_type == 4) {
+                return 'back-row';
+            }
+            if (row.received_money != row.receivable_money) {
+
+                return 'red-row';
+            } else {
+                return '';
+            }
+        },
         getData: function getData() {
-            var filters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
             //获取数据
             var self = this;
-            var parm = Object.assign(filters, self.pageData);
-            parm.category_id = self.category_id;
-
+            var parm = Object.assign(this.filters, self.pageData);
+            parm.category_id = 1;
+            parm.settlement = 1;
             self.$axios.get(self.currentUrl, { params: parm }).then(function (res) {
 
                 if (res.data.code == 1000) {
@@ -447,6 +680,16 @@ exports.default = {
                 }
             }).catch(function (error) {
                 console.log(error);
+            });
+        },
+        getMoney: function getMoney() {
+            var self = this;
+            self.$axios.get(self.$adminPath + 'getMoney').then(function (res) {
+                if (res.data.code == 1000) {
+                    self.Money = res.data.data;
+                }
+            }).catch(function (err) {
+                console.log(err);
             });
         },
         create: function create() {
@@ -474,7 +717,6 @@ exports.default = {
             self.$refs[formName].validate(function (valid) {
                 if (valid) {
                     self.$emit('showLoading');
-
                     self.$axios.post(self.currentUrl, self.formData).then(function (res) {
                         self.$emit('showLoading');
 
@@ -510,15 +752,16 @@ exports.default = {
                 if (valid) {
                     self.$emit('showLoading');
                     self.formData._method = 'PUT';
-                    self.formData.category_id = self.category_id;
-                    self.$axios.post(self.currentUrl + '/' + self.formData.id, self.formData).then(function (res) {
+                    self.formData.category_id = 1;
+                    self.$axios.post(self.$adminPath + 'updateReceived/' + self.formData.id, self.formData).then(function (res) {
                         self.$emit('showLoading');
 
                         if (res.data.code == 1000) {
                             self.formData = {};
                             self.dialogFormVisible = false;
+                            self.dialogMoneyVisible = false;
                             self.$message.success('编辑成功');
-                            self.getData();
+                            self.getData(self.filters);
                         } else {
                             self.$message.error(res.data.msg);
                         }
@@ -561,7 +804,7 @@ exports.default = {
         },
         filterData: function filterData() {
             //搜索
-            this.getData(this.filters);
+            this.getData();
         },
         handleSizeChange: function handleSizeChange(val) {
             //改变每页条数
@@ -629,6 +872,111 @@ exports.default = {
                 price: '',
                 quantity: ''
             });
+        },
+        editMoney: function editMoney(index, row, type) {
+            //显示编辑视图
+            var self = this;
+            self.formData = Object.assign({}, row);
+            self.formData.taxation = String(self.formData.taxation);
+
+            if (type == 1) {
+                self.showMoney = 'display:block';
+                self.showTime = 'display:none';
+            } else {
+                self.showTime = 'display:block';
+                self.showMoney = 'display:none';
+            }
+
+            self.methodType = 0; //设置请求方法为修改
+            self.dialogMoneyVisible = true;
+        },
+        formatTime: function formatTime(val) {
+            this.formData.received_time = val;
+        },
+        dateFtt: function dateFtt(fmt, date) {
+            //author: meizz
+            var o = {
+                "M+": date.getMonth() + 1, //月份
+                "d+": date.getDate(), //日
+                "h+": date.getHours(), //小时
+                "m+": date.getMinutes(), //分
+                "s+": date.getSeconds(), //秒
+                "q+": Math.floor((date.getMonth() + 3) / 3), //季度
+                "S": date.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o) {
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+            }return fmt;
+        },
+        Export: function Export() {
+
+            var self = this;
+            var start = void 0,
+                end = void 0;
+
+            if (self.formExcel.times[0] && self.formExcel.times[1]) {
+                start = self.dateFtt('yyyy-MM-dd', self.formExcel.times[0]);
+                end = self.dateFtt('yyyy-MM-dd', self.formExcel.times[1]);
+            } else {
+                start = '';
+                end = '';
+            }
+
+            self.dialogExcelVisible = false;
+            window.location.href = self.$adminPath + 'export?number=' + self.formExcel.number + '&name=' + self.formExcel.name + '&start=' + start + '&end=' + end + '&category_id=1';
+        },
+
+        /*fmoney(s, n) {
+            n = n > 0 && n <= 20 ? n : 2;
+            let x= s > 0 ? 0:1
+            s = parseFloat((s + "").replace(/[^\d\.-]/g, "")).toFixed(n) + "";
+             var l = s.split(".")[0].split("").reverse(), r = s.split(".")[1];
+            let t = "";
+            for (let i = x; i < l.length; i++) {
+                t += l[i] + ((i + 1) % 3 == 0 && (i + 1) != l.length ? "," : "");
+            }
+            return t.split("").reverse().join("") + "." + r;
+        },*/
+        fmoney: function fmoney(number) {
+            var decimals = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+            var dec_point = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '.';
+            var thousands_sep = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : ',';
+            var roundtag = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 'round';
+
+            /*
+            * 参数说明：
+            * number：要格式化的数字
+            * decimals：保留几位小数
+            * dec_point：小数点符号
+            * thousands_sep：千分位符号
+            * roundtag:舍入参数，默认 "ceil" 向上取,"floor"向下取,"round" 四舍五入
+            * */
+            number = (number + '').replace(/[^0-9+-Ee.]/g, '');
+            roundtag = roundtag || "ceil"; //"ceil","floor","round"
+            var n = !isFinite(+number) ? 0 : +number,
+                prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+                sep = typeof thousands_sep === 'undefined' ? ',' : thousands_sep,
+                dec = typeof dec_point === 'undefined' ? '.' : dec_point,
+                s = '',
+                toFixedFix = function toFixedFix(n, prec) {
+
+                var k = Math.pow(10, prec);
+                console.log();
+
+                return '' + parseFloat(Math[roundtag](parseFloat((n * k).toFixed(prec * 2))).toFixed(prec * 2)) / k;
+            };
+            s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+            var re = /(-?\d+)(\d{3})/;
+            while (re.test(s[0])) {
+                s[0] = s[0].replace(re, "$1" + sep + "$2");
+            }
+
+            if ((s[1] || '').length < prec) {
+                s[1] = s[1] || '';
+                s[1] += new Array(prec - s[1].length + 1).join('0');
+            }
+            return s.join(dec);
         }
     },
     mounted: function mounted() {
@@ -636,12 +984,13 @@ exports.default = {
         this.category_id = this.$route.query.category;
         this.getProducts();
         this.getData();
+        this.getMoney();
     }
 };
 
 /***/ }),
 
-/***/ 742:
+/***/ 770:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -659,10 +1008,139 @@ var render = function() {
           attrs: { span: 24 }
         },
         [
+          _c("span", [
+            _vm._v("应收总额:"),
+            _c("b", [
+              _vm._v(
+                " " + _vm._s(_vm.fmoney(_vm.Money.receivable_money, 2)) + " "
+              )
+            ])
+          ]),
+          _vm._v("    \n        "),
+          _c("span", [
+            _vm._v("已收总额:"),
+            _c("b", { staticStyle: { color: "green" } }, [
+              _vm._v(
+                " " + _vm._s(_vm.fmoney(_vm.Money.received_money, 2)) + " "
+              )
+            ])
+          ]),
+          _vm._v("    \n        "),
+          _c("span", [
+            _vm._v("未收总额:"),
+            _c("b", { staticStyle: { color: "red" } }, [
+              _vm._v(" " + _vm._s(_vm.fmoney(_vm.Money.uncollected, 2)) + " ")
+            ])
+          ]),
+          _vm._v("    \n    ")
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "el-col",
+        {
+          staticClass: "toolbar",
+          staticStyle: { "padding-bottom": "0px" },
+          attrs: { span: 24 }
+        },
+        [
           _c(
             "el-form",
             { attrs: { inline: true, model: _vm.filters } },
             [
+              _c(
+                "el-form-item",
+                { attrs: { label: "合同编号" } },
+                [
+                  _c("el-input", {
+                    attrs: { "auto-complete": "off" },
+                    model: {
+                      value: _vm.filters.contract,
+                      callback: function($$v) {
+                        _vm.$set(_vm.filters, "contract", $$v)
+                      },
+                      expression: "filters.contract"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                { attrs: { label: "商家名称" } },
+                [
+                  _c(
+                    "el-select",
+                    {
+                      attrs: { "auto-complete": "off", filterable: "" },
+                      model: {
+                        value: _vm.filters.business_name,
+                        callback: function($$v) {
+                          _vm.$set(_vm.filters, "business_name", $$v)
+                        },
+                        expression: "filters.business_name"
+                      }
+                    },
+                    _vm._l(_vm.business, function(item) {
+                      return _c("el-option", {
+                        key: item.business_name,
+                        attrs: {
+                          label: item.business_name,
+                          value: item.business_name
+                        }
+                      })
+                    })
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                { attrs: { label: "备注信息" } },
+                [
+                  _c("el-input", {
+                    attrs: { "auto-complete": "off" },
+                    model: {
+                      value: _vm.filters.remarks,
+                      callback: function($$v) {
+                        _vm.$set(_vm.filters, "remarks", $$v)
+                      },
+                      expression: "filters.remarks"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                { attrs: { label: "出库类型" } },
+                [
+                  _c(
+                    "el-select",
+                    {
+                      attrs: { placeholder: "请选择出库类型" },
+                      model: {
+                        value: _vm.filters.outgoing_type,
+                        callback: function($$v) {
+                          _vm.$set(_vm.filters, "outgoing_type", $$v)
+                        },
+                        expression: "filters.outgoing_type"
+                      }
+                    },
+                    _vm._l(_vm.types, function(item) {
+                      return _c("el-option", {
+                        key: item.id,
+                        attrs: { label: item.name, value: item.id }
+                      })
+                    })
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
               _c(
                 "el-form-item",
                 [
@@ -710,11 +1188,11 @@ var render = function() {
                       attrs: { type: "primary" },
                       on: {
                         click: function($event) {
-                          _vm.create()
+                          _vm.dialogExcelVisible = true
                         }
                       }
                     },
-                    [_vm._v("新增")]
+                    [_vm._v("导出")]
                   )
                 ],
                 1
@@ -730,7 +1208,10 @@ var render = function() {
         "el-table",
         {
           staticStyle: { width: "100%" },
-          attrs: { data: _vm.tableData },
+          attrs: {
+            data: _vm.tableData,
+            "row-class-name": _vm.tableRowClassName
+          },
           on: { expand: _vm.expandData }
         },
         [
@@ -777,25 +1258,43 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("el-form-item", { attrs: { label: "出库金额" } }, [
-                          _c("span", [_vm._v(_vm._s(props.row.outgoing_money))])
+                          _c("span", [
+                            _vm._v(_vm._s(_vm.fmoney(props.row.outgoing_money)))
+                          ])
                         ]),
                         _vm._v(" "),
                         _c("el-form-item", { attrs: { label: "增值税" } }, [
                           _c("span", [
-                            _vm._v(_vm._s(props.row.value_added_tax))
+                            _vm._v(
+                              _vm._s(_vm.fmoney(props.row.value_added_tax))
+                            )
                           ])
                         ]),
                         _vm._v(" "),
                         _c("el-form-item", { attrs: { label: "3%代扣税" } }, [
                           _c("span", [
-                            _vm._v(_vm._s(props.row.withholding_tax))
+                            _vm._v(
+                              _vm._s(_vm.fmoney(props.row.withholding_tax))
+                            )
                           ])
                         ]),
                         _vm._v(" "),
                         _c("el-form-item", { attrs: { label: "应收金额" } }, [
                           _c("span", [
-                            _vm._v(_vm._s(props.row.receivable_money))
+                            _vm._v(
+                              _vm._s(_vm.fmoney(props.row.receivable_money))
+                            )
                           ])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "已收金额" } }, [
+                          _c("span", [
+                            _vm._v(_vm._s(_vm.fmoney(props.row.received_money)))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("el-form-item", { attrs: { label: "收款时间" } }, [
+                          _c("span", [_vm._v(_vm._s(props.row.received_time))])
                         ]),
                         _vm._v(" "),
                         _c("el-form-item", { attrs: { label: "经办人" } }, [
@@ -831,11 +1330,21 @@ var render = function() {
           }),
           _vm._v(" "),
           _c("el-table-column", {
-            attrs: { prop: "created_at", label: "出库时间", align: "center" }
+            attrs: {
+              prop: "created_at",
+              label: "出库时间",
+              align: "center",
+              width: "240"
+            }
           }),
           _vm._v(" "),
           _c("el-table-column", {
-            attrs: { prop: "outgoing_type_zh", label: "类型", align: "center" }
+            attrs: {
+              prop: "outgoing_type_zh",
+              label: "类型",
+              align: "center",
+              width: "80"
+            }
           }),
           _vm._v(" "),
           _c("el-table-column", {
@@ -850,86 +1359,268 @@ var render = function() {
             attrs: {
               prop: "business.business_name",
               label: "商家名称",
-              align: "center"
+              align: "center",
+              width: "200"
             }
           }),
           _vm._v(" "),
           _c("el-table-column", {
             attrs: {
-              prop: "outgoing_address",
-              label: "出库地点",
-              align: "center"
-            }
+              prop: "product",
+              label: "产品名称",
+              align: "center",
+              width: "400"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return _vm._l(scope.row.product, function(item) {
+                    return _c("span", [
+                      _vm._v(_vm._s(item.product.name)),
+                      _c("br")
+                    ])
+                  })
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "outgoing_quantity",
+              label: "产品数量",
+              align: "center",
+              width: "120"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return _vm._l(scope.row.product, function(item) {
+                    return _c("span", [
+                      _vm._v(_vm._s(item.outgoing_quantity)),
+                      _c("br")
+                    ])
+                  })
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "outgoing_quantity",
+              label: "产品价格",
+              align: "center",
+              width: "150"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return _vm._l(scope.row.product, function(item) {
+                    return _c("span", [
+                      _vm._v(_vm._s(_vm.fmoney(item.product_price, 2))),
+                      _c("br")
+                    ])
+                  })
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "outgoing_quantity",
+              label: "产品单位",
+              align: "center",
+              width: "120"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return _vm._l(scope.row.product, function(item) {
+                    return _c("span", [
+                      _vm._v(_vm._s(item.product.metering_unit)),
+                      _c("br")
+                    ])
+                  })
+                }
+              }
+            ])
           }),
           _vm._v(" "),
           _c("el-table-column", {
             attrs: {
               prop: "outgoing_money",
               label: "出库金额",
-              align: "center"
-            }
+              align: "center",
+              width: "150"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return [
+                    _c("span", [
+                      _vm._v(_vm._s(_vm.fmoney(scope.row.outgoing_money, 2))),
+                      _c("br")
+                    ])
+                  ]
+                }
+              }
+            ])
           }),
           _vm._v(" "),
           _c("el-table-column", {
-            attrs: { prop: "value_added_tax", label: "增值税", align: "center" }
+            attrs: {
+              prop: "value_added_tax",
+              label: "增值税",
+              align: "center",
+              width: "150"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return [
+                    _c("span", [
+                      _vm._v(_vm._s(_vm.fmoney(scope.row.value_added_tax, 2))),
+                      _c("br")
+                    ])
+                  ]
+                }
+              }
+            ])
           }),
           _vm._v(" "),
           _c("el-table-column", {
             attrs: {
               prop: "withholding_tax",
               label: "3%代扣税",
-              align: "center"
-            }
+              align: "center",
+              width: "150"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return [
+                    _c("span", [
+                      _vm._v(_vm._s(_vm.fmoney(scope.row.withholding_tax, 2))),
+                      _c("br")
+                    ])
+                  ]
+                }
+              }
+            ])
           }),
           _vm._v(" "),
           _c("el-table-column", {
             attrs: {
               prop: "receivable_money",
               label: "应收金额",
-              align: "center"
-            }
-          }),
-          _vm._v(" "),
-          _c("el-table-column", {
-            attrs: { prop: "created_user", label: "经办人", align: "center" }
-          }),
-          _vm._v(" "),
-          _c("el-table-column", {
-            attrs: { label: "操作", align: "center" },
+              align: "center",
+              width: "150"
+            },
             scopedSlots: _vm._u([
               {
                 key: "default",
                 fn: function(scope) {
                   return [
-                    _c(
-                      "el-button",
-                      {
-                        attrs: { size: "small" },
-                        on: {
-                          click: function($event) {
-                            _vm.edit(scope.$index, scope.row)
-                          }
-                        }
-                      },
-                      [_vm._v("编辑")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "el-button",
-                      {
-                        attrs: { size: "small", type: "danger" },
-                        on: {
-                          click: function($event) {
-                            _vm.destroy(scope.row)
-                          }
-                        }
-                      },
-                      [_vm._v("删除")]
-                    )
+                    _c("span", [
+                      _vm._v(_vm._s(_vm.fmoney(scope.row.receivable_money, 2))),
+                      _c("br")
+                    ])
                   ]
                 }
               }
             ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "received_money",
+              label: "已收金额",
+              align: "center",
+              width: "150"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return [
+                    _c("span", [
+                      _vm._v(_vm._s(_vm.fmoney(scope.row.received_money, 2)))
+                    ]),
+                    _vm._v(" "),
+                    scope.row.outgoing_type != 4
+                      ? _c(
+                          "el-button",
+                          {
+                            attrs: { size: "small" },
+                            on: {
+                              click: function($event) {
+                                _vm.editMoney(scope.$index, scope.row, 1)
+                              }
+                            }
+                          },
+                          [_vm._v("收款")]
+                        )
+                      : _vm._e()
+                  ]
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "received_time",
+              label: "收款时间",
+              align: "center",
+              width: "240"
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return [
+                    _c("span", [_vm._v(_vm._s(scope.row.received_time))]),
+                    _vm._v(" "),
+                    scope.row.outgoing_type != 4
+                      ? _c(
+                          "el-button",
+                          {
+                            attrs: { size: "small" },
+                            on: {
+                              click: function($event) {
+                                _vm.editMoney(scope.$index, scope.row, 2)
+                              }
+                            }
+                          },
+                          [_vm._v("编辑")]
+                        )
+                      : _vm._e()
+                  ]
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: {
+              prop: "content",
+              label: "备注",
+              align: "center",
+              width: "400"
+            }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: { prop: "created_user", label: "经办人", align: "center" }
           })
         ],
         1
@@ -1365,6 +2056,124 @@ var render = function() {
       _c(
         "el-dialog",
         {
+          attrs: { title: "收款", visible: _vm.dialogMoneyVisible },
+          on: {
+            "update:visible": function($event) {
+              _vm.dialogMoneyVisible = $event
+            }
+          }
+        },
+        [
+          _c(
+            "el-form",
+            {
+              ref: "ruleForm",
+              attrs: {
+                model: _vm.formData,
+                rules: _vm.rules,
+                "label-width": _vm.formLabelWidth
+              }
+            },
+            [
+              _c(
+                "el-form-item",
+                {
+                  style: _vm.showMoney,
+                  attrs: {
+                    label: "收款金额",
+                    "label-width": _vm.formLabelWidth
+                  }
+                },
+                [
+                  _c("el-input", {
+                    attrs: {
+                      "auto-complete": "off",
+                      placeholder: "请输入收款金额"
+                    },
+                    model: {
+                      value: _vm.formData.received_money_new,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formData, "received_money_new", $$v)
+                      },
+                      expression: "formData.received_money_new"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                {
+                  style: _vm.showTime,
+                  attrs: {
+                    label: "收款时间",
+                    "label-width": _vm.formLabelWidth
+                  }
+                },
+                [
+                  _c("el-date-picker", {
+                    attrs: { type: "datetime", placeholder: "选择收款时间" },
+                    on: { change: _vm.formatTime },
+                    model: {
+                      value: _vm.formData.received_time,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formData, "received_time", $$v)
+                      },
+                      expression: "formData.received_time"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "dialog-footer",
+              attrs: { slot: "footer" },
+              slot: "footer"
+            },
+            [
+              _c(
+                "el-button",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.dialogMoneyVisible = false
+                    }
+                  }
+                },
+                [_vm._v("取 消")]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-button",
+                {
+                  attrs: { type: "primary" },
+                  on: {
+                    click: function($event) {
+                      _vm.methodType
+                        ? _vm.store("ruleForm")
+                        : _vm.update("ruleForm")
+                    }
+                  }
+                },
+                [_vm._v("确 定")]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "el-dialog",
+        {
           attrs: { title: "产品信息", visible: _vm.dialogProductVisible },
           on: {
             "update:visible": function($event) {
@@ -1408,6 +2217,114 @@ var render = function() {
           )
         ],
         1
+      ),
+      _vm._v(" "),
+      _c(
+        "el-dialog",
+        {
+          attrs: { title: "导出", visible: _vm.dialogExcelVisible },
+          on: {
+            "update:visible": function($event) {
+              _vm.dialogExcelVisible = $event
+            }
+          }
+        },
+        [
+          _c(
+            "el-form",
+            { ref: "ruleForm", attrs: { model: _vm.formExcel } },
+            [
+              _c(
+                "el-form-item",
+                {
+                  attrs: {
+                    label: "单文件数据条数(默认为10000条)",
+                    "label-width": _vm.LabelWidth
+                  }
+                },
+                [
+                  _c("el-input", {
+                    attrs: { number: "", min: "0" },
+                    model: {
+                      value: _vm.formExcel.title,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formExcel, "title", $$v)
+                      },
+                      expression: "formExcel.title"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                {
+                  attrs: { label: "按时间导出", "label-width": _vm.LabelWidth }
+                },
+                [
+                  [
+                    _c("el-date-picker", {
+                      attrs: {
+                        type: "datetimerange",
+                        "picker-options": _vm.pickerOptions2,
+                        placeholder: "选择时间范围",
+                        align: "right",
+                        format: "yyyy-MM-dd HH:mm:ss"
+                      },
+                      model: {
+                        value: _vm.formExcel.times,
+                        callback: function($$v) {
+                          _vm.$set(_vm.formExcel, "times", $$v)
+                        },
+                        expression: "formExcel.times"
+                      }
+                    })
+                  ]
+                ],
+                2
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "dialog-footer",
+              attrs: { slot: "footer" },
+              slot: "footer"
+            },
+            [
+              _c(
+                "el-button",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.dialogExcelVisible = false
+                    }
+                  }
+                },
+                [_vm._v("取 消")]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-button",
+                {
+                  attrs: { type: "primary" },
+                  on: {
+                    click: function($event) {
+                      _vm.Export()
+                    }
+                  }
+                },
+                [_vm._v("确 定")]
+              )
+            ],
+            1
+          )
+        ],
+        1
       )
     ],
     2
@@ -1419,7 +2336,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-24fbd26c", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7e4a1754", module.exports)
   }
 }
 

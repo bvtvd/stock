@@ -85,7 +85,7 @@ return [
              * The disk names on which the backups will be stored.
              */
             'disks' => [
-                'local',
+                'public',
             ],
         ],
 
@@ -102,6 +102,7 @@ return [
      * You can also use your own notification classes, just make sure the class is named after one of
      * the `Spatie\Backup\Events` classes.
      */
+
     'notifications' => [
 
         'notifications' => [
@@ -137,6 +138,7 @@ return [
 
         ],
     ],
+
 
     /*
      * Here you can specify which backups should be monitored.

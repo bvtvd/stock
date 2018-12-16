@@ -22,6 +22,8 @@ $router->group(['prefix'=>'admin'],function($router) {
 
 });
 
+$router->get('database/backup', 'SystemController@databaseBackup');
+
 /*$router->get('/',function(){
     return view('welcome');
 });

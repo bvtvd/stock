@@ -97,7 +97,9 @@ class PermissionController extends Controller
     }
 
     public function getMenu(){
-        $menu = Auth::user()->roles[0]->permissions()->where('display',1)->orderBy('sort')->get()->keyBy('id')->toArray();
+        $menu = Auth::user()->roles[0]->permissions()->where('display',1)->orderBy('sort')->get()
+            ->keyBy('id')
+            ->toArray();
         return success(toTree($menu));
     }
 }

@@ -52,5 +52,7 @@ $router->group(['middleware' => 'auth:api'],function() use ($router){
     $router->resource('outgoing','FinishedOutgoingController');//出库
     $router->resource('finance','FinanceController');//收支明细
     //$router->resource('open','OpenController');//开关管理
+    // 数据库备份
+    $router->get('database/backup', 'SystemController@databaseBackup');
 });
 

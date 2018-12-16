@@ -1,5 +1,8 @@
 <template>
-        <div>
+<div >
+<el-row>
+        <el-col :span="24">
+
                 <el-tree style="width: 800px"
                          :data="menus"
                          :props="defaultProps"
@@ -47,7 +50,10 @@
                                 <el-button type="primary" @click="methodType ? nodeStore() : nodeUpdate()"> 确 定</el-button>
                         </div>
                 </el-dialog>
-        </div>
+        </el-col>
+</el-row>
+
+</div>
 
 
 
