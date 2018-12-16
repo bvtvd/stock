@@ -684,7 +684,7 @@ exports.default = {
         },
         getMoney: function getMoney() {
             var self = this;
-            self.$axios.get(self.$adminPath + 'getMoney').then(function (res) {
+            self.$axios.get(self.$adminPath + 'getMoney', { params: this.filters }).then(function (res) {
                 if (res.data.code == 1000) {
                     self.Money = res.data.data;
                 }
@@ -805,6 +805,7 @@ exports.default = {
         filterData: function filterData() {
             //搜索
             this.getData();
+            this.getMoney();
         },
         handleSizeChange: function handleSizeChange(val) {
             //改变每页条数
@@ -820,6 +821,7 @@ exports.default = {
             //重置搜索表单
             this.filters = {};
             this.getData();
+            this.getMoney();
         },
         getProducts: function getProducts() {
             var self = this;

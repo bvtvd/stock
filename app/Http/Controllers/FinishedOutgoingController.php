@@ -330,11 +330,32 @@ class FinishedOutgoingController extends Controller
 
     }
 
-    public function getMoney()
+    public function getMoney(Request $request)
     {
-        $data['receivable_money'] = FinishedOutgoing::where('category_id',1)->where('contract_number','>',0)->sum('receivable_money');//应收
 
-        $data['received_money'] = FinishedOutgoing::where('category_id',1)->where('contract_number','>',0)->sum('received_money');//已收
+
+        $collection = FinishedOutgoing::select('receivable_money', 'received_money')
+            ->where('category_id',1)->where('contract_number','>',0)
+            ->when($contractNumber = $request->input('contract'), function($query) use ($contractNumber){
+                $query->like($contractNumber, 'contract_number');
+            })
+            ->when($businessName = $request->input('business_name'), function($query) use ($businessName){
+                $query->whereHas('business', function($query) use ($businessName){
+                    $query->like($businessName, 'business_name');
+                });
+            })
+            ->when($remarks = $request->input('remarks'), function($query) use ($remarks){
+                $query->like($remarks, 'content');
+            })
+            ->when($outgoingType = $request->input('outgoing_type'), function($query) use ($outgoingType){
+                $query->where('outgoing_type', $outgoingType);
+            })->get();
+
+//        $data['receivable_money'] = FinishedOutgoing::where('category_id',1)->where('contract_number','>',0)->sum('receivable_money');//应收
+        $data['receivable_money'] = $collection->sum('receivable_money');//应收
+
+//        $data['received_money'] = FinishedOutgoing::where('category_id',1)->where('contract_number','>',0)->sum('received_money');//已收
+        $data['received_money'] = $collection->sum('received_money');//已收
         $data['uncollected'] = bcsub($data['receivable_money'],$data['received_money'],2);//未收
 
         return success($data);

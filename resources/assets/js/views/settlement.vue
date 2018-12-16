@@ -589,7 +589,7 @@
             },
             getMoney(){
                 let self = this;
-                self.$axios.get(self.$adminPath + 'getMoney')
+                self.$axios.get(self.$adminPath + 'getMoney', {params: this.filters})
                     .then(function(res){
                         if(res.data.code == 1000){
                             self.Money = res.data.data;
@@ -717,6 +717,7 @@
             },
             filterData(){//搜索
                 this.getData();
+                this.getMoney()
             },
             handleSizeChange(val) {//改变每页条数
                 this.pageData.per_page = val;
@@ -732,7 +733,7 @@
 
                 };
                 this.getData();
-
+                this.getMoney()
             },
             getProducts(){
                 let self = this;
