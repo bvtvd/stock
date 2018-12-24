@@ -237,14 +237,14 @@
                                     <el-input v-if="formData.product"  v-model="formData.product[scope.$index].return_quantity" @change="(value) => { tmd(value,scope.row,scope.$index)}" auto-complete="off"></el-input>
                                 </template>
                             </el-table-column>
-                            <el-table-column
-                                    prop="product_price"
-                                    label="入库地点"
-                                    align="center">
-                                <template slot-scope="scope">
-                                    <el-input v-if="formData.product"  v-model="formData.product[scope.$index].address" @change="(value) => { tmd1(value,scope.row,scope.$index)}"  auto-complete="off"></el-input>
-                                </template>
-                            </el-table-column>
+                            <!--<el-table-column-->
+                                    <!--prop="product_price"-->
+                                    <!--label="入库地点"-->
+                                    <!--align="center">-->
+                                <!--<template slot-scope="scope">-->
+                                    <!--<el-input v-if="formData.product"  v-model="formData.product[scope.$index].address" @change="(value) => { tmd1(value,scope.row,scope.$index)}"  auto-complete="off"></el-input>-->
+                                <!--</template>-->
+                            <!--</el-table-column>-->
                             <!--<el-table-column-->
                                     <!--prop="product_price"-->
                                     <!--label="备注"-->

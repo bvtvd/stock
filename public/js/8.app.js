@@ -1426,53 +1426,6 @@ var render = function() {
                               }
                             }
                           ])
-                        }),
-                        _vm._v(" "),
-                        _c("el-table-column", {
-                          attrs: {
-                            prop: "product_price",
-                            label: "入库地点",
-                            align: "center"
-                          },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "default",
-                              fn: function(scope) {
-                                return [
-                                  _vm.formData.product
-                                    ? _c("el-input", {
-                                        attrs: { "auto-complete": "off" },
-                                        on: {
-                                          change: function(value) {
-                                            _vm.tmd1(
-                                              value,
-                                              scope.row,
-                                              scope.$index
-                                            )
-                                          }
-                                        },
-                                        model: {
-                                          value:
-                                            _vm.formData.product[scope.$index]
-                                              .address,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.formData.product[
-                                                scope.$index
-                                              ],
-                                              "address",
-                                              $$v
-                                            )
-                                          },
-                                          expression:
-                                            "formData.product[scope.$index].address"
-                                        }
-                                      })
-                                    : _vm._e()
-                                ]
-                              }
-                            }
-                          ])
                         })
                       ],
                       1

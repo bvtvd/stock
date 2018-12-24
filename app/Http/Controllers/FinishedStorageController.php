@@ -76,8 +76,7 @@ class FinishedStorageController extends Controller
 
                     foreach ($data['product'] as $item){
 
-                        if(key_exists('return_quantity',$item) && key_exists('address',$item) && $item['return_quantity']){
-                            if( $item['address']){
+                        if(key_exists('return_quantity',$item) && $item['return_quantity']){
 
                                 $product = Product::findOrFail($item['product_id']);
                                 $data['quantity'] = $item['return_quantity'];
@@ -118,9 +117,6 @@ class FinishedStorageController extends Controller
                                     'storage_money' => $data['storage_money'],
                                     'minus_from' => $data['outgoing_product']
                                 ]) ;
-                            }else{
-                                throw new \ErrorException('退货数量与退货地址不能为空');
-                            }
 
                         }
                     }
@@ -260,40 +256,81 @@ class FinishedStorageController extends Controller
                     $outMoney = 0;
                     $outgoingId = 0;
 
+                    // 新增入库
+                    $new = [];
+
                     foreach($data['product'] as $product){
-                        $outgoingProduct = OutgoingProduct::findOrFail($product['id']);
-                        $outgoingId = $outgoingProduct->outgoing_id;
+                        if(key_exists('id', $product)){
+                            // 修改之前的退货入库数据
 
-                        $minusFrom = $outgoingProduct->minus_from;
+                            $outgoingProduct = OutgoingProduct::findOrFail($product['id']);
+                            $outgoingId = $outgoingProduct->outgoing_id;
 
-                        if(0 == $product['return_quantity']){
-                            // 为0 的话减去相应记录
-                            $diff = $outgoingProduct->outgoing_quantity;
+                            $minusFrom = $outgoingProduct->minus_from;
 
-                            $outgoingProduct->delete();
+                            // 让空的数量为哦
+                            if(empty($product['return_quantity'])) $product['return_quantity'] = 0;
 
+                            if(0 == $product['return_quantity']){
+                                // 为0 的话减去相应记录
+                                $diff = $outgoingProduct->outgoing_quantity;
+
+                                $outgoingProduct->delete();
+
+                            }else{
+                                $diff = $outgoingProduct->outgoing_quantity + $product['return_quantity'];
+
+                                $outgoingProduct->outgoing_quantity = -$product['return_quantity'];
+                                $outgoingProduct->address = $product['address'];
+                                $outgoingProduct->storage_money = bcmul($outgoingProduct->product_price, $product['return_quantity'],2);
+
+                                $outMoney +=  $outgoingProduct->storage_money;
+
+
+
+                                $outgoingProduct->save();
+                            }
+
+                            // 修改原出库商品的退货数量
+                            OutgoingProduct::where('id', $minusFrom)->update([
+                                'return_quantity' => \DB::raw('return_quantity + ' . $diff)
+                            ]);
                         }else{
-                            $diff = $outgoingProduct->outgoing_quantity + $product['return_quantity'];
 
-                            $outgoingProduct->outgoing_quantity = -$product['return_quantity'];
-                            $outgoingProduct->address = $product['address'];
-                            $outgoingProduct->storage_money = bcmul($outgoingProduct->product_price, $product['return_quantity'],2);
+                            if(!empty($product['return_quantity'])){
+                                $outgoingProduct = OutgoingProduct::findOrFail($product['outgoing_product']);
 
-                            $outMoney +=  $outgoingProduct->storage_money;
+                                $storageMoney = bcmul($outgoingProduct->product_price, $product['return_quantity'],2);
 
+                                // 新增退货入库逻辑
+                                $new[] = [
+                                    'product_price' => $outgoingProduct->product_price,
+                                    'outgoing_quantity' => -$product['return_quantity'],
+                                    'product_id' => $product['product_id'],
+                                    'storage_id' => $storage->id,
+                                    'address' => $product['address'],
+                                    'storage_money' => $storageMoney,
+                                    'minus_from' => $product['outgoing_product'],
+                                    'outgoing_id' => $outgoingId
+                                ];
 
+                                $outMoney +=  $storageMoney;
 
-                            $outgoingProduct->save();
+                                // 修改原出库商品的退货数量
+                                $outgoingProduct->update([
+                                    'return_quantity' => \DB::raw('return_quantity + ' . $product['return_quantity'])
+                                ]);
+                            }
                         }
 
-                        // 修改原出库商品的退货数量
-                        OutgoingProduct::where('id', $minusFrom)->update([
-                            'return_quantity' => \DB::raw('return_quantity + ' . $diff)
-                        ]);
 
                     }
 
                     $finishedOutgoing = FinishedOutgoing::findOrFail($outgoingId);
+
+                    // 新增入库
+                    if($new) $finishedOutgoing->product()->createMany($new);
+
                     $finishedOutgoing->update([
                         'outgoing_money' => -$outMoney,
                         'value_added_tax'=>-$this->outgoing($finishedOutgoing->taxation,$outMoney)['value_added_tax'],

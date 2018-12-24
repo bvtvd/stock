@@ -44,8 +44,8 @@ class FinishedStorageRequest extends FormRequest
         }
         if(3 == request()->get('storage_type')){
             $rules =  array_merge($rules, [
-                'product.*.return_quantity' => 'required',
-                'product.*.address' => 'required'
+                'product.*.return_quantity' => 'nullable|integer',
+//                'product.*.address' => 'required'
             ]);
         }
 
@@ -68,7 +68,7 @@ class FinishedStorageRequest extends FormRequest
             'storage_type'  =>  '入库类型',
             'contract_number' => '合同编号',
             'product.*.return_quantity' => '入库数量',
-            'product.*.address' => '入库地点',
+//            'product.*.address' => '入库地点',
         ];
     }
 }
