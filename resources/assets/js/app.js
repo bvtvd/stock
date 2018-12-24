@@ -34,6 +34,7 @@ import routes from './routes'
 
 import 'font-awesome/css/font-awesome.min.css'
 import store from './views/vuex/store';
+import env from './env'
 
 Vue.use(ElementUI)
 Vue.use(VueRouter)
@@ -43,9 +44,9 @@ Vue.prototype.$store = store
 Vue.prototype.$axios = axios;
 
 
-Vue.prototype.$adminPath = 'http://stock.test/api/';
-Vue.prototype.$apiPath = 'http://stock.test/api/';
-Vue.prototype.$basePath = 'http://stock.test/';
+Vue.prototype.$adminPath = env.apiPath;
+Vue.prototype.$apiPath = env.apiPath;
+Vue.prototype.$basePath = env.basePath;
 // Vue.prototype.$adminPath = 'http://116.255.232.219:8082/api/';
 // Vue.prototype.$apiPath = 'http://116.255.232.219:8082/api/';
 // Vue.prototype.$basePath = 'http://116.255.232.219:8082/';
