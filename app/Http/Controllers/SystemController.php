@@ -15,6 +15,8 @@ class SystemController extends Controller
         // 下载之前先清理以前的备份
         Storage::deleteDirectory('backup');
 
+        // 在创建这个文件夹
+        Storage::makeDirectory('backup');
 
         Artisan::call('backup:run', [
             '--only-db' => '1',
