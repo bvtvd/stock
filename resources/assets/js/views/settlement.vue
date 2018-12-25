@@ -557,16 +557,7 @@
         },
         methods:{
             tableRowClassName(row, rowIndex){
-                if(row.outgoing_type == 4){
-                    return 'back-row';
-                }
-                if(row.received_money != row.receivable_money){
-
-                    return 'red-row';
-                }else{
-                    return '';
-                }
-
+                return row.balance_style;
             },
 
             getData(){//获取数据
@@ -908,11 +899,11 @@
 </script>
 
 <style >
-    .el-table .red-row {
+    .el-table .red {
         background: #ff4d51;
     }
 
-    .el-table .back-row {
+    .el-table .green {
         background: #2ab27b;
     }
     .el-table .green-row {

@@ -10,11 +10,29 @@ class FinishedOutgoing extends Model
 {
     //
     use CommonSearch;
+
+    // 状态常量
+    /** 销售*/
+    const OUTGOING_TYPE_SALE = 1;
+    /** 样品*/
+    const OUTGOING_TYPE_SAMPLE = 2;
+    /** 调拨*/
+    const OUTGOING_TYPE_TRANSFER = 3;
+    /** 退货*/
+    const OUTGOING_TYPE_RETURN = 4;
+
+    /** 退货*/
+    const NOT_BALANCE = 0;
+    /** 退货*/
+    const BALANCE = 1;
+
     protected $table = 'outgoing_storage';
 
     protected $fillable = ['created_user', 'business_id', 'outgoing_address', 'contract_number', 'outgoing_type', 'taxation', 'appendix', 'appendix_name','content','outgoing_money','receivable_money','value_added_tax','withholding_tax','category_id','received_money','received_time','created_at'];
 
-    protected $appends = ['outgoing_type_zh'];
+    protected $appends = ['outgoing_type_zh', 'balance_style'];
+
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      * 出库产品
@@ -67,5 +85,12 @@ class FinishedOutgoing extends Model
         return $start && $end ? $query->whereBetween('created_at',[$start,$end]) : $query;
     }
 
+    public function getBalanceStyleAttribute()
+    {
+        $outgoingType = data_get($this->attributes, 'outgoing_type');
+        if(self::OUTGOING_TYPE_RETURN == $outgoingType) return 'green';
+        $blance = data_get($this->attributes, 'balance');
+        return $blance ? '' : 'red';
+    }
 
 }

@@ -51,7 +51,6 @@ class FinishedOutgoingController extends Controller
                         $query->orderByDesc('contract_number');
                     }
                 )
-                ->orderByDesc('contract_number')
                 ->orderByDesc('created_at')
                 ->paginate($this->per_page);
 

@@ -87,7 +87,7 @@ exports = module.exports = __webpack_require__(23)(false);
 
 
 // module
-exports.push([module.i, "\n.el-table .red-row {\n    background: #ff4d51;\n}\n.el-table .back-row {\n    background: #2ab27b;\n}\n.el-table .green-row {\n    background: #00ff00;\n}\n.upload-storage-appendix input[type=\"file\"] {\n    display: none;\n}\n.demo-table-expand {\n    font-size: 0;\n}\n.demo-table-expand label {\n    width: 90px;\n    color: #99a9bf;\n}\n.demo-table-expand .el-form-item {\n    margin-right: 0;\n    margin-bottom: 0;\n    width: 50%;\n}\n", ""]);
+exports.push([module.i, "\n.el-table .red {\n    background: #ff4d51;\n}\n.el-table .green {\n    background: #2ab27b;\n}\n.el-table .green-row {\n    background: #00ff00;\n}\n.upload-storage-appendix input[type=\"file\"] {\n    display: none;\n}\n.demo-table-expand {\n    font-size: 0;\n}\n.demo-table-expand label {\n    width: 90px;\n    color: #99a9bf;\n}\n.demo-table-expand .el-form-item {\n    margin-right: 0;\n    margin-bottom: 0;\n    width: 50%;\n}\n", ""]);
 
 // exports
 
@@ -654,15 +654,7 @@ exports.default = {
 
     methods: {
         tableRowClassName: function tableRowClassName(row, rowIndex) {
-            if (row.outgoing_type == 4) {
-                return 'back-row';
-            }
-            if (row.received_money != row.receivable_money) {
-
-                return 'red-row';
-            } else {
-                return '';
-            }
+            return row.balance_style;
         },
         getData: function getData() {
             //获取数据
