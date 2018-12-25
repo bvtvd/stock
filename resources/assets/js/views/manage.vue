@@ -20,7 +20,7 @@
             /** 数据库备份 */
             databaseBackup(){
                 console.log('databaseBackup-----------');
-                window.location.href = this.$basePath + '/database/backup';
+                window.location.href = this.$basePath + 'database/backup';
             }
         }
         , mounted() {
