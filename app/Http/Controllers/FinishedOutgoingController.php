@@ -27,6 +27,8 @@ class FinishedOutgoingController extends Controller
             $list = FinishedOutgoing::where('contract_number', request()->get('contract_number'))->with('product.product', 'business')->first();
 
         } else {
+            $balance = \request()->input('balance', -1);
+
             $list = FinishedOutgoing::Like(request()->get('contract'), 'contract_number')
                 ->Equal(request()->get('outgoing_type'), 'outgoing_type')
                 ->where('category_id', request()->get('category_id'))
@@ -51,6 +53,10 @@ class FinishedOutgoingController extends Controller
                         $query->orderByDesc('contract_number');
                     }
                 )
+                ->when(-1 != $balance,
+                    function($query) use ($balance){
+                        $query->where('balance', $balance)->where('outgoing_type', '!=', FinishedOutgoing::OUTGOING_TYPE_RETURN);
+                    })
                 ->orderByDesc('created_at')
                 ->paginate($this->per_page);
 
@@ -332,9 +338,9 @@ class FinishedOutgoingController extends Controller
 
     public function getMoney(Request $request)
     {
+        $balance = $request->input('balance', -1);
 
-
-        $collection = FinishedOutgoing::select('receivable_money', 'received_money')
+        $collection = FinishedOutgoing::select('id', 'receivable_money', 'received_money', 'contract_number')
             ->where('category_id', 1)->where('contract_number', '>', 0)
             ->when($contractNumber = $request->input('contract'), function ($query) use ($contractNumber) {
                 $query->like($contractNumber, 'contract_number');
@@ -349,12 +355,23 @@ class FinishedOutgoingController extends Controller
             })
             ->when($outgoingType = $request->input('outgoing_type'), function ($query) use ($outgoingType) {
                 $query->where('outgoing_type', $outgoingType);
-            })->get();
+            })
+            ->when(-1 != $balance,
+                function($query) use ($balance){
+                    $query->where('balance', $balance)->where('outgoing_type', '!=', FinishedOutgoing::OUTGOING_TYPE_RETURN);
+                })
+            ->get();
 
-//        $data['receivable_money'] = FinishedOutgoing::where('category_id',1)->where('contract_number','>',0)->sum('receivable_money');//应收
-        $data['receivable_money'] = $collection->sum('receivable_money');//应收
+        \Log::info('collect :',  $collection->toArray() );
+        if(1 == $balance) {
+            // 全部为已完成收款的查询
+            $data['receivable_money'] = $collection->sum('receivable_money_with_return');//应收
+            \Log::info('finished receivable_money_with_return:'. $data['receivable_money'] );
+        }else{
+            $data['receivable_money'] = $collection->sum('receivable_money');//应收
+        }
 
-//        $data['received_money'] = FinishedOutgoing::where('category_id',1)->where('contract_number','>',0)->sum('received_money');//已收
+
         $data['received_money'] = $collection->sum('received_money');//已收
         $data['uncollected'] = bcsub($data['receivable_money'], $data['received_money'], 2);//未收
 

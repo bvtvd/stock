@@ -30,7 +30,7 @@ class FinishedOutgoing extends Model
 
     protected $fillable = ['created_user', 'business_id', 'outgoing_address', 'contract_number', 'outgoing_type', 'taxation', 'appendix', 'appendix_name','content','outgoing_money','receivable_money','value_added_tax','withholding_tax','category_id','received_money','received_time','created_at'];
 
-    protected $appends = ['outgoing_type_zh', 'balance_style'];
+    protected $appends = ['outgoing_type_zh', 'balance_style', 'receivable_money_with_return'];
 
 
     /**
@@ -53,7 +53,7 @@ class FinishedOutgoing extends Model
 
     public function getOutgoingTypeZhAttribute()
     {
-        if($this->attributes['outgoing_type']){
+        if(key_exists('outgoing_type', $this->attributes)){
 
             return [1=>'销售','样品','调拨出库','退货入库'][$this->attributes['outgoing_type']];
 
@@ -93,4 +93,17 @@ class FinishedOutgoing extends Model
         return $blance ? '' : 'red';
     }
 
+    /**
+     * 应收金额减去退库金额
+     */
+    public function getReceivableMoneyWithReturnAttribute()
+    {
+        if($contractNumber = data_get($this->attributes, 'contract_number')){
+            $returnMoney = self::where('contract_number', $contractNumber)
+                ->where('outgoing_type', self::OUTGOING_TYPE_RETURN)
+                ->sum('receivable_money');
+
+            return bcsub(data_get($this->attributes, 'receivable_money'), abs($returnMoney), 2);
+        }
+    }
 }

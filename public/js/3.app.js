@@ -560,6 +560,22 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     data: function data() {
@@ -1130,6 +1146,41 @@ var render = function() {
                         attrs: { label: item.name, value: item.id }
                       })
                     })
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-form-item",
+                { attrs: { label: "收款状态" } },
+                [
+                  _c(
+                    "el-select",
+                    {
+                      attrs: { placeholder: "请选择出库类型" },
+                      model: {
+                        value: _vm.filters.balance,
+                        callback: function($$v) {
+                          _vm.$set(_vm.filters, "balance", $$v)
+                        },
+                        expression: "filters.balance"
+                      }
+                    },
+                    [
+                      _c("el-option", {
+                        attrs: { label: "全部", value: "-1" }
+                      }),
+                      _vm._v(" "),
+                      _c("el-option", {
+                        attrs: { label: "已完成", value: "1" }
+                      }),
+                      _vm._v(" "),
+                      _c("el-option", {
+                        attrs: { label: "未完成", value: "0" }
+                      })
+                    ],
+                    1
                   )
                 ],
                 1

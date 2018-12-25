@@ -12,9 +12,9 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public $per_page = 10;
+    public $per_page;
     public function __construct(){
-        $this->per_page = request()->get('per_page');
+        $this->per_page = request()->get('per_page', 10);
     }
 
     /**

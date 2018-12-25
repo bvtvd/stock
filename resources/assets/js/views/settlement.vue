@@ -34,6 +34,22 @@
                         </el-option>
                     </el-select>
                 </el-form-item>
+                <el-form-item label="收款状态" >
+                    <el-select v-model="filters.balance"  placeholder="请选择出库类型">
+                        <el-option
+                            label="全部"
+                            value="-1">
+                        </el-option>
+                        <el-option
+                            label="已完成"
+                            value="1">
+                        </el-option>
+                        <el-option
+                            label="未完成"
+                            value="0">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
                 <el-form-item>
                     <el-button type="primary" v-on:click="filterData()">查询</el-button>
                 </el-form-item>
