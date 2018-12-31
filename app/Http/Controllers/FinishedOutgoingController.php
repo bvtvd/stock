@@ -420,6 +420,7 @@ class FinishedOutgoingController extends Controller
             $cellData = FinishedOutgoing::with('product.product', 'business')->hasTime($start, $end)->where('category_id', request()->get('category_id'))
                 ->skip($number * $i)
                 ->take($number)
+                ->orderByDesc('created_at')
                 ->get()->toArray();
 
             $data = [];
