@@ -48,16 +48,17 @@ class FinishedOutgoingController extends Controller
                     function ($query) {
                         $query->where('outgoing_type', '!=', '4');
                     })
-                ->when(request()->get('category_id') != 3,
-                    function ($query) {
-                        $query->orderByDesc('contract_number');
-                    }
-                )
+
                 ->when(-1 != $balance,
                     function($query) use ($balance){
                         $query->where('balance', $balance)->where('outgoing_type', '!=', FinishedOutgoing::OUTGOING_TYPE_RETURN);
                     })
                 ->orderByDesc('created_at')
+                ->when(request()->get('category_id') != 3,
+                    function ($query) {
+                        $query->orderByDesc('contract_number');
+                    }
+                )
                 ->paginate($this->per_page);
 
         }
