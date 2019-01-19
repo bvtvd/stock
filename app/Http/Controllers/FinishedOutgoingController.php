@@ -443,7 +443,7 @@ class FinishedOutgoingController extends Controller
                 $arr['product_name'] = implode("\n", $arr['product_name']);
                 $arr['outgoing_address'] = $cellDatum['outgoing_address'];
                 $price = array_map(function ($v) {
-                    return $v['product']['market_price'];
+                    return $v['product_price'];
                 }, $cellDatum['product']);
                 $arr['price'] = implode("\n", $price);
                 $number = array_map(function ($v) {
